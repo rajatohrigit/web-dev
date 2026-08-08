@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+}
+.idiv{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Transformation- The transform property is used to change the position, size, rotation, or shape
+of an element without affecting the page layout.Negative always change the direction. 
+
+?1)translate(x,y) :Moves an element from its original position.
+Ex- transform: translate(100px, 50px); Moves element diagonally (horizontally verically)
+    transform: translateX(100px); only horizontally
+    transform: translateY(-50px); only vertically
+    New css properties-> 
+    translate:x y;
+    translate:x; Assume y=0
+    For 3d transformation->
+    translate:x y z;
+
+?2)scale(value) :Changes the size(increase or decrease) of an element.Works as multiplier.Default is 1.
+Ex- transform:scale(x,y);  Changes width and height
+    transform:scale(value); Changes width and height equally
+    transform:scaleX(x); Changes only width
+    transform:scaleY(y); Changes only height
+    New css properties-> 
+    scale:value; Changes width and height equally
+    scale:x y; Changes width and height
+
+?3)rotate() :Rotates an element.Negative angle indicates Anticlockwise.
+Ex- transform: rotate(45deg);
+    transform: rotateX(45deg);
+    transform: rotateY(45deg);
+    New css property-> 
+    rotate:45deg;
+    For 3d transformation->
+    rotate:x angle;    
+    rotate:y angle;    
+    rotate:z angle;    
+
+
+?4)skew():The skew() function tilts (slants) an element along the X-axis, Y-axis, or both.
+Ex- transform:skew(x,y); Skew with both the axes
+    transform:skewX(x); Horizontal flip
+    transform:skewY(y); Vertical flip
+
+?5)transform-origin: The transform-origin property sets the point around which the transformation occurs.
+Works with rotate.
+Ex- transform-origin: center;
+    transform-origin: top;
+    transform-origin: bottom;
+    transform-origin: top left;
+    transform-origin: top right;
+    transform-origin: bottom left;
+    transform-origin: bottom right;
+    transform-origin: center top;
+
+?6)Multiple Transformations- You can apply several transformations together.
+Ex- transform: translateX(100px) rotate(45deg) scale(1.5)  skewY(15deg);
+
+*/
+
+.image{
+    width:500px;
+    height:500px;
+    transition:all 3s linear ;
+
+}
+
+.image:hover{
+    scale:0.6;
+    rotate:360deg;
+    /* translate:40px 40px; */
+    /* transform:skew(30deg,45deg); */
+    transform-origin: bottom;
+}

@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    line-height: 1.56;
+    padding: 0 10px;
+}
+.mid-para{
+    margin:0 26px;
+    /* Giving the margin from right,left not from top and bottom */
+    text-align:justify;
+}
+
+textarea{
+    margin:40px;
+    background-color: antiquewhite;
+}
+
+
+.container{
+    padding:31px;
+}
+/* Only the childs will get padding no nested element get */
+
+ul{
+    list-style-type: square;
+    padding-left:23px; 
+}
+
+.backend{
+    margin-left:23px;
+}
+
+ol{
+    list-style-type: decimal;
+    padding-left:23px;
+}
+
+.main-div{
+    width:700px;
+    height:300px;
+    background-color:grey;
+    color:white;
+    border:3px solid red;
+    margin:35px;
+
+
+    /*! Overflow Property */
+    /* overflow controls what happens when the content inside an element is larger than the element itself.
+    1. overflow:visible- (Default)-The extra content is visible outside the box.
+    2. overflow:hidden- The extra content is cut off (hidden).
+    3. overflow:scroll- Always shows scrollbars, even if the content fits.
+    4. overflow:auto- Shows scrollbars only when needed. */
+    
+    overflow:auto;
+}
+
+/*! Pseudo Elements */
+/* Pseudo-elements are used to style or create a specific part of an element without adding extra HTML.
+1. ::before- Adds content before an element.
+2. ::after- Adds content after an element.  
+3. ::first-letter- Styles only the first letter.
+4. ::first-line- Styles only the first line of text.
+5. ::selection- Styles the text when the user selects it.Only background-color,color property applied on it.
+6. ::placeholder- style the placeholder text inside input.*/
+
+h1::first-letter{
+    font-size:40px;
+    color:chartreuse;
+    margin-left:23px;
+}
+
+.mid-para::first-line{
+    color:grey;
+    text-transform:capitalize;
+}
+
+h1::after{
+    content:"/Classes"
+}
+
+h1::before{
+    content:"The ";
+}
+
+.mid-para::selection{
+    background-color: yellow;
+    color:purple;
+}
+textarea::placeholder{
+    color:white;
+    background-color: black; 
+}
+
+/*! Psuedo classes 
+A pseudo-class is used to style an element based on particular state/condition without adding extra html.
+:link,:visited,:hover,:active(visited and link only restricted to <a> tag)
+1):checked -Selects a checked checkbox, selected radio button.
+2):first-child -Selects an element that is the first child of its parent.
+3):last-child -Selects an element that is the last child of its parent.
+4):nth-child(n) -Selects the nth child of its parent.
+5):first-of-type -Selects the first element of a specific type among its siblings
+6):last-of-type -Selects the last element of a specific type among its siblings.
+7):nth-of-type(n) -Selects the nth element of a specific type among its siblings.*/
+
+h2:first-child{
+    text-decoration: underline;
+}
+span:last-child{
+    font-weight: bold;
+}
+.backend li:nth-child(3){
+    font-style: italic;
+}
+p:first-of-type{
+    color:blue;
+    padding-top:12px;
+}
+p:last-of-type{
+    color:orange;
+}
+
+.backend>li:nth-of-type(even){
+    text-decoration: line-through;
+}
+
+.radio input{
+    margin-left:10px;
+}
+
+/* .radio input[type="radio"]:checked{
+    accent-color: red;
+} */
+input:checked{
+    accent-color: red;
+}
+
+.age-text{
+    margin-left:20px;
+}
+
+/*! Multicolumn layout- Converting content into vertical columns just like a newspaper or magazine.
+1)column-count -Number of columns
+2)column-width -Width of each column
+3)column-gap -Space between columns
+4)column-span:all -It only makes the element itself span across the full width of the container. 
+5)column-rule -Vertical line between columns */
+
+.newspaper{
+    column-count:3;
+    column-rule:3px solid grey;
+    column-gap:50px;
+    text-align:justify;
+    padding-bottom:14px;
+    background:linear-gradient(to right,white,gold);  
+}
+.newspaper h2{
+    column-span: all;
+    font-size:36px;
+}

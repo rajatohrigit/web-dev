@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Forms</h1>
+        </legend>
+    Name <input type="text" name="name"size="34" placeholder="Enter your name">
+    <br><br>
+    Age <input type="number" name="age"size="34" placeholder="Enter your age">
+    <br><br>
+
+    <!-- RADIO BUTTON -->
+    Gender:
+    <input type="radio" name="gender" value="male" id="M">
+    <label for="M">Male</label>
+    <input type="radio" name="gender" value="Female" id="F">
+    <label for="F">Female</label>
+    <br><br>
+
+    Password <input type="password" placeholder="Enter your password">
+    <br><br>
+
+    <!-- CHECKBOX BUTTON-->
+    Hobbies:
+    
+    <input type="checkbox" name="hobbies" value="Coding" id="coding">
+    <label for="coding">Coding</label>
+
+    <input type="checkbox" name="hobbies" value="sports" id="sports">
+    <label for="sports">sports</label>
+    
+    <input type="checkbox" name="hobbies" value="Reading" id="Reading">
+    <label for="Reading">Reading</label>
+
+    <input type="checkbox" name="hobbies" value="Yoga and Exercise" id="yoga and Exercise">
+    <label for="yoga and Exercise">yoga and Exercise</label>
+    <br><br>
+
+    <!-- TEXTAREA  -->
+    Enter your family details: 
+    <br>
+    <textarea rows="10" cols="30" required placeholder="Write down family background" >
+    </textarea>
+    <br><br>
+    
+    <!-- DROPDOWN LIST -->
+     <label for="qualification">HIGHEST QUALIFICATION </label> 
+     <select id="qualification" name="qualification">
+         <option value="10TH PASS">10TH PASS</option>
+         <option value="12TH PASS">12TH PASS</option>
+         <option value="Graduation">GRADUATION</option>
+     </select>
+     <br><br>
+     
+     <!-- Datalist  -->
+     <label for="country">Choose country</label>
+     <input type="text" name="countries" list="countries" id="country"> 
+     <datalist id="countries" virtualkeyboardpolicy="">
+         <option value="america">
+         <option value="britain">
+         <option value="hongkong">
+     </datalist>
+
+    </fieldset>
+</body>
+</html>

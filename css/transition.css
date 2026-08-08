@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*! Transitions creates a smooth animation when a CSS property changes value. 
+    It changes from one state to another 
+    For example, on hover, focus, or when a class is added. */
+
+/* Without transition property we cannot create a smooth transition,it will change original state to another state instantly */
+
+/*? Transition Properties
+
+1) transition-property:	Specifies which CSS property to animate.all is default
+all means all the properties mentioned in the hover state on the box to be applied
+
+2)transition-duration:	How long the transition takes (e.g., 0.5s, 300ms).
+
+3)transition-timing-function: Controls the animation speed (ease, linear, ease-in, ease-out, ease-in-out).
+    ease(default) – Starts slow, speeds up, then slows down .
+    linear – Constant speed.
+    ease-in – Starts slowly.
+    ease-out – Ends slowly.
+    ease-in-out – Slow at both the start and end. 
+
+4)transition-delay:	Waits before starting the transition.
+
+(Shorthand property) 
+5)transition: property duration timing-function delay  */
+
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+    margin:40px;
+    
+    /* transition-property: all; 
+    transition-duration: 4s;
+    transition-timing-function: ease-in;
+    transition-delay:1s; */
+
+    /*? Instead of giving all 4 properties use shorthand */
+    transition: all  4s linear;
+
+    /*? We can give properties one by one by commas it will execute at same time with their respective duration and timing function */
+    /* transition: width  4s linear, box-shadow  4s linear; */
+
+}
+
+.box:hover{
+    width: 650px;
+    height:560px;
+    box-shadow: 0 0 0 33px red; /* x-offset,y-offset,blur-radius,density/spread,color */
+
+}

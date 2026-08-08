@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    position:fixed;
+    /* top:0; */
+}
+
+.main-container{
+    height:1400px;
+    background-color: brown;
+}
+
+.next-div{
+    height:1700px;
+    background-color:orange;
+}
+
+img{
+    position:sticky;
+    top:500px;
+    left:400px;
+
+}
+/*! Position property controls how an element is placed on a webpage 
+1)position:relative- Used as referance for the child.
+Move the element from its original position, but keep its original space reserved.
+
+2)position:absolute- Element position got changed from normal document flow,
+it will get placed according to the nearest positioned ancestor (an ancestor whose position is not static). 
+If none exists, it uses the viewport.No space is reserved anymore.
+anyone can occupy space of it without offsets it might get overlap.
+
+3)position:fixed- Fixed relative to the browser window.Remains in the same place even when the page scrolls
+Used for sticky headers, menus, sidebars .
+As background-attachment:fixed used to stick the image in background*
+
+4)position:sticky- It behaves like relative first. When it reaches the given top (or other offset), it becomes fixed.
+It remains fixed only while its parent container is visible. After the parent ends, it stops sticking.
+
+5)position:static- by default it follows the normal document flow.top,bottom,left,right,z-index not gonna work
+
+z-index is used to control the stacking order of overlapping elements, when items got overlap on each other,
+so we can prioritize who can be at top or any place
+A higher z-index value appears above a lower z-index value.For ex- z-index:1,z-index:2
+
+Static & Relative → Stay in the normal flow (space is reserved).
+Absolute & Fixed → Removed from the normal flow (space is not reserved).
+/
+
+/*? We dont need to write margin-top,margin-bottom etc we can simply use top,bottom as due to position property */
+
+.parent{
+    position: relative;
+    width:400px;
+    height:400px;
+    border: 2px solid black;
+    background:linear-gradient(to right,grey,rgb(39, 23, 183));
+    box-shadow: 0 0 5px  yellow;
+    top:200px;
+    left:500px;
+}
+.child{
+    position: absolute;
+    width:100px;
+    height:100px;
+    border: 2px solid black;
+    background:linear-gradient(to top,cyan,orange);
+}
+ .child-1{ 
+    top: 0;
+    left:0;
+} 
+
+.child-2{
+    top:0;
+    right:0;
+
+}
+.child-3{
+    bottom:0;
+    left:0;
+}
+.child-4{
+    bottom:0;
+    right:0;
+}
+.child-5{
+    top:50%;
+    left:50%;
+    /* transform:translate(-50%,-50%); */
+    translate:-50% -50%;
+
+}

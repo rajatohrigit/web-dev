@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* in Google Fonts with import just place the @import at the top of the css file and add font-family to the selcter where you want to use */
+
+/* Custom Fonts place anywhere but place before use it */
+@font-face {
+    font-family: "veerjifonts";
+    src: url('../public/veerjifonts.ttf') format('truetype');
+    /* We can any font extension for ex .otf file have extension or format type('opentype') */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    /* box-sizing decide whether the padding amd border include or exclude 
+    by default is content box(exclude padding and border add to the content width)
+    another one is border-box(include the border in the content width)  */
+}
+
+
+body{
+
+    /*! Font Properties */
+    font-family: "Roboto Mono", monospace;
+    /* We can give multiple fonts(fallback fonts) one after another by seperating with comma */
+
+    font-family:"veerjifonts";
+    /* we can give it any name but good practice is use same name amd use inverted commas in the name of font*/
+
+    /* As Css works top to bottom the bottom one has higher priority  it will execute
+    for ex if i gave the font line by line */
+    font-size:20px;
+    font-weight:200;
+    font-style:italic; 
+    
+
+
+    /*! Text properties */
+    text-transform:capitalize;
+    /* uppercase/lowercase/capitalize */
+
+    text-align:justify;
+    /* left/right/center/justify */
+
+    text-decoration-line: underline;
+    /* underline/overline/line-through(cut the line [waste])/none */
+
+    text-decoration-color: pink;
+    text-decoration-thickness: 4px;
+    text-decoration-style: dashed;
+    /* solid/double/dotted/dashed/wavy/none*/
+
+    text-shadow:2px 2px 1px cyan;
+    /* offset-x(horizontally),offset-y(vertically),blur radius,color */
+
+    line-height:1.56; 
+    /*Control the space between the lines*/
+
+    word-spacing: 2px;
+    /* Space between words  */
+
+    letter-spacing: 1.3px;
+    /* Space between lines  */
+
+
+    /*! Border properties  */
+    /* border:solid red 3px; */
+    /* Shorthand property: [border-style border-color border-width]
+    (we can mention any number of properties and sequencing doesn't matter) */
+
+    /* We can have define individual property as well  */
+    border-style:dashed;
+    /*solid/dotted/dashed/ridge/hidden/double/inset/outset/none;  */
+    /*Also we can give direction to border like border-top,border-bottom,border-left,border-right  */
+
+    border-color:rgb(255,0,255);
+    /* we can also define the color as well as #ff00ff */
+
+    border-radius:10px;
+    /* It make curve the border from 4 sides,border-radius for the circle set the border to 50%(width-heigh must be same) */
+
+    border-width:5px;
+
+
+    /*! Padding properties (space b/w text and border)*/
+    /* padding:10px; */
+    /* Uniform padding from all the directions */
+
+    /* padding:10px 15px;  */
+    /* Vertically horizontally  */
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:20px;
+    padding-bottom:20px;
+    /* we can define property like this as well padding-left,padding-right,padding-top,padding-bottom */
+
+
+    /*!  margin properties (space outside the border)*/
+    /* margin:10px; */
+    /* Uniform margin from all the directions */
+
+    margin:10px 15px; 
+    /* first one is Vertically second one is horizontally (we can give auto as well) */
+
+    /* margin:auto; */
+    /* It will align horizonatlly center does not have any impact on top and bottom */
+
+    /* margin-top:17px;
+    margin-bottom:17px; */
+    /* we can define property like this as well padding-left,padding-right,padding-top,padding-bottom */
+
+
+    /*!Gradients-combination of 2 or more colors,used to create color transition with direction 
+    /*Syntax- background: linear-gradient(direction, color1, color2);  
+    background or background-image*/
+
+    /* background:linear-gradient(to left,orange,cyan); */
+    /* With directions- to left[right to left],to right,to top,to bottom */
+
+    /* background-image:linear-gradient(to top left,orange,cyan); */
+    /* giving gradients diagonally - top left,to top right,to bottom right,to bottom left */
+
+    /* background:linear-gradient(90deg,pink,purple); */
+    /* We can give angles- 0deg,90deg,180deg,270deg {For the transparency we can add rgba to the colors} */
+
+    /* We can give color stoppage as well */
+    /* background: linear-gradient(to right,red 20%,yellow 60%,blue 100%); */
+
+    /* Repeating-linear-gradient(it will repeat after a point)
+    Syntax:background: repeating-linear-gradient(direction,color1 start end,color2 start end);{start is optional} */
+    /* background: repeating-linear-gradient(to right, grey 400px,white 600px); */
+    /* background: repeating-linear-gradient(to right, grey,white 100px ); */
+
+    /* Adding color overlay on image 
+    background:linear-gradient(to top,
+    rgb(140, 104, 65,0.9),
+    rgb(206, 60, 60,0.9),
+    rgba(91, 104, 169, 0.9)),
+    url('../public/stranger3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+
+    /* ! Radial Gradient creates a smooth color transition start from a center point and spread outwards in circular or ellipse shape */
+    /* background:radial-gradient(yellow,cyan); */
+    /* Default shape:ellipse */
+    /* background:radial-gradient(circle,yellow,cyan); */
+
+    /* Repeating-radial-gradient(if start not mention it is by default assume 0 */
+    /* background:repeating-radial-gradient(circle,yellow,cyan 100px); */
+    /* background:repeating-radial-gradient(circle,yellow 200px,cyan 400px); */
+    /* background:repeating-radial-gradient(yellow 200px,cyan 400px); */
+
+    /* Differently spaced color stoppage */
+    background:radial-gradient(circle at center ,yellow 0%,green 20%,pink 70%,orange 100%);
+}
+

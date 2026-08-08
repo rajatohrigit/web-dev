@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videos with iframe</title>
+</head>
+<body>
+    <video controls poster="../public/cricket.jpeg" muted>
+        <source src="../public/cricketlover.mp4" type="video/mp4">
+    </video>
+    
+    <video controls poster="../public/kane.webp" width="500px" height="500px" >
+        <source src="../public/kanemama.mp4" type="video/mp4">
+        <source src="../public/kanemama.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <!-- video-hierachy-
+    1)mp4
+    2)webm
+    3)ogv -->
+
+    <br>
+
+    <!-- iframe with youtube share(embed) button -->
+     <iframe width="560" height="415" src="https://www.youtube.com/embed/FPoDwu3odT8?si=M26adn-1G0ank_rK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+     </iframe>
+    <!-- iframe with map share button -->
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.520162228542!2d77.05534310974926!3d28.614168475573297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0535c58b5729%3A0xf9031f158fea1a97!2sRajat%20Ohri!5e0!3m2!1sen!2sin!4v1782157588080!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+     </iframe>
+     <hr>
+     <!-- inserting pdf in website -->
+     <iframe src="../public/certificate.pdf" width="430px" height="300px">
+     </iframe>
+     <br>
+     
+     <!-- audio -->
+    <audio controls autoplay>
+     <source src="../public/meme.mp3" type="audio/mpeg">
+     <source src="../public/meme.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+     <!-- audio-hierachy-
+    1)mp3(mpeg)
+    2)wav
+    3)ogg -->
+</body>
+</html>

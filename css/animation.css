@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    text-align: center;
+}
+
+/*? Difference b/w transition and animation */
+/*1) In Transition,User action is required like with pseudo class :hover,:focus,:active.It will start after user action
+while In Animation,the animation will starts on the page load,no user action required 
+2)In transition,no @keyframes is there while In animation @keyframes are there.
+3)In transition,only stage from start to end while In animation multiple stages can be defined using %
+4)In transition, no loop is there while in animation loop is there*/
+
+
+/*! Animation in CSS
+CSS Animations let you change the style of an element over time without using JavaScript.
+->An animation consists of two parts:
+i)@keyframes-Defines the  animation steps/stages.Its not a property its rule.
+
+ii)Animation Properties
+1)animation-name: Specifies which @keyframes to use.
+
+2)animation-duration: How long one animation cycle takes.
+
+3)animation-timing-function: Controls the animation speed.
+Values-linear,ease,ease-in,ease-out,ease-in-out,step-start,step-end,steps(),cubic-bezier()
+
+4)animation-delay: Waits before starting.
+
+5)animation-iteration-count: Number of times the animation runs.
+values- any positive number,infinite
+
+6)animation-direction: Controls the direction.
+Values-normal(default),reverse,alternate,alternate-reverse
+
+7)animation-fill-mode : Controls how styles apply before or after the animation.
+Values:none(default),forwards,backwards,both
+
+8)animation-shorthand property
+animation:name,duration,timing-function,delay,iteration-count,direction,fill-mode,play-state;
+->Only animation-name and animation-duration are required. The rest are optional.
+->Multiple animation possible by using commas
+Ex animation: move 3s linear infinite, 
+fade 2s ease-in-out infinite;
+
+*/
+.box{
+    width:200px;
+    aspect-ratio: 1;
+    border-radius:50%;
+    margin-left:50px;
+    box-shadow:0 0 0 3px white;
+    
+    /* animation-name: left2right;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+    animation-fill-mode:both; */
+    
+    /*? Shorthand */
+    animation:left2right 3s linear 0.5s alternate infinite forwards,
+    colorchange 3s ease-in 0.5s alternate-reverse infinite backwards; 
+    /* but we can does this work with single animation as well */
+}
+
+/*? Using from-to  */
+@keyframes colorchange {
+    from{
+        background-color: pink;
+    }
+    to{
+        background-color: aliceblue;
+    }
+}
+
+/*? Using percentages: */
+@keyframes left2right {
+    0% {
+        translate:0%;
+    }
+    
+    50% {
+        translate:50vw;
+    }
+    
+    100% {
+        translate:calc(90vw - 200px);
+    }
+}
+
+/*? Perspective is used to give 3D depth to transformed elements. Without it, rotateX(), rotateY(), and translateZ() look flat.
+   It determines how far the viewer's eye is from the object.  */
+/* Properties that work with perspective as it is used for 3D transformation 
+Ex- rotate:x angle;
+    rotate:y angle;
+    rotate:z angle;
+    translate:x y z;
+    Mention the parent container pespective and child item transformation for smooth transition add Transition.
+*/
+
+.img-div{
+    width: 100vw;
+    /* height: 100vh; */
+    perspective: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.ppimage{
+    width: 400px;
+    aspect-ratio: 1;
+    margin-top:30px;
+    transition:all 3s linear;
+}
+
+.ppimage:hover{
+    rotate:x 360deg;
+    translate: 0 0 50px;
+}

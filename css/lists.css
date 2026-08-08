@@ -1,0 +1,84 @@
+
+/* now the browser is modern we can write ol and ul on both we can use list-style type attributes */
+
+body{
+    font-size: 20px;
+    font-weight: bold;
+}
+ol{
+   list-style-type:upper-alpha;
+   border:solid 2px red; 
+   width:700px;
+   background-color: grey;
+}
+ol ul{
+    list-style-type: square;
+    list-style-position: inside;
+    /* Shorthand-> list-style:square inside url(""); */
+    border:solid 2px red; 
+    list-style-position: inside;
+    width:500px;
+    background-color: aquamarine;
+}
+li{
+    text-transform: capitalize;
+    width:700px;
+}
+div{
+    margin:30px;
+}
+
+
+/*! Anchor States with Pseudo class LVHA order maters */
+/*Pseudo classes are those classes which will apply when the condition met or the state changes */
+#a1:link{  
+    /* default state for unvisited link   */
+    color:green;
+}
+#a2:visited{ 
+    /*User already clicked link  */
+    color:blue
+}
+#a3:hover{ 
+    /*User hower the muse pointer over link  */
+    color:yellow;
+}
+#a4:active{ 
+    /*clicking the link when mouse is down  */
+    color:pink;
+}
+
+/* :focus is a CSS pseudo-class that applies styles when an element is focused (selected and ready to receive input).
+A user can focus an element by:
+Clicking on it.
+Pressing the Tab key to navigate. */
+
+/*! Combinators are used to define the relationship between selectors. They let you select elements based on their position relative to other elements. */
+/*Types of combinators: */
+
+/*1) Descendent selector(Space):Selects all matching elements inside another element, no matter how deeply nested. */
+div p{
+    color:green;
+    font-weight: 600;
+}
+
+/* 2) Child Combinator (>):Selects only direct child of another element. */
+div>p{
+    text-decoration: underline;
+}
+
+/* 3) Adjacent Sibling Combinator (+):Selects the immediately next sibling(sibling:child of same parent). */
+h1+a{
+    text-transform: uppercase;
+}
+
+/* 4)General Sibling Selector (~):The General Sibling Selector (~) selects all sibling elements that come after another element, provided they have the same parent. */
+h1~a{
+    text-decoration: underline;
+}
+
+/*! display:inline-block(inline acts as block but content does not take full width) 
+We can give power to inline element by defining it with display inline block with this 
+we can give margin and padding from top and bottom,and width and height also gonna work with it
+without these we also knew that in inline elements width and height not works,padding,margin not work from top and bottom  
+ */

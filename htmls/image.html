@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image </title>
+</head>
+<body>
+    <!-- IMAGE -->
+    <!-- with copying image address(image is slef containing tag) -->
+    <!-- <img src="https://net-mirror.in/wp-content/uploads/2026/06/Netmirror-APK.png" alt="netmiror">
+    <br>
+    <img src="../public/stranger.jpeg" width="200px" height="300px" alt="stranger"> 
+    ./  ->current folder so html folder
+    ../ ->web-development folder
+    <br> -->
+    
+    <!-- <figure>
+        <picture>
+        <source srcset="../public/stranger.jpeg" media="(min-width:1200px)">
+        <source srcset="../public/stranger3.jpeg" media="(min-width:800px)">
+        <img src="../public/stranger2.jpeg"  alt="stranger">
+        </picture>
+    <figcaption> stranger things</figcaption>
+    </figure> -->
+
+    <!-- The <picture> tag is used to display responsive images. It contains 
+    one or more <source> elements to specify different images for different 
+    screen sizes or formats, along with an <img> element that acts as a fallback 
+    if no <source> matches. -->
+
+  <img
+  src="../public/stranger3-1024.jpeg.jpg"
+  srcset="
+    ../public/stranger3-600.jpeg 600w,
+    ../public/stranger3-1024.jpeg 1024w,
+    ../public/stranger3-1920.jpeg 1920w
+  "
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1024px) 100vw,
+         1920px"
+  alt="Image">
+
+
+</body>
+</html>

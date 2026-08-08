@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+}
+
+#heading-1 {
+    text-align: center;
+}
+
+/* Flexbox (Flexible Box Layout) is a CSS layout model designed to arrange items in a row or column, making it easy to create 
+responsive and flexible layouts. 
+    Main-axis-> X axis
+    Cross-axis-> Y axis 
+
+/*! Flex Container (Parent) 
+1. display
+2. flex-direction: row(default), column, row-reverse, column-reverse
+3. justify-content: flex-start, flex-end, center, space-around, space-between, space-evenly
+4. align-items: flex-start, flex-end, center, stretch(default)
+5. gap
+6. flex-wrap: nowrap(default), wrap, wrap-reverse
+7. align-content: flex-start,flex-end,center,space-around,space-between,space-evenly,stretch(default) */
+
+/*! Flex Item (Children) 
+1. order
+2. align-self:flex-start, flex-end, center
+3. flex-grow: Default: 0
+4. flex-shrink:Default: 1
+5. flex-basis
+6. flex: flex-grow flex-shrink flex-basis*/
+
+.flex-container {
+
+    /* width: 800px;  */
+    height: 1000px;
+    /*? To make it responsive dont mention width and height to the container */
+
+    border: 2px solid black;
+    background-color: pink;
+
+    /*! Flexbox container Properties */
+    display: flex;
+    /*? It will stack all the child items horizontally,goes in the direction of x-axis(main-axis) */
+
+    flex-direction: row;
+    /*? Decides main-axis or cross-axis.Column will reverse justify-content,align-items
+    Values- row(defaut),column,row-reverse,column-reverse */
+
+    justify-content: center;
+    /*? How items aligned on main-axis.
+    Values- flex-start,flex-end,center,space-around,space-between,space-evenly */
+
+    align-items: center;
+    /*? how items aligned on cross-axis.It align  only single row.
+    Values-flex-start,flex-end,center */
+
+    gap: 25px;
+    /*? Space between flex-items horizontally as well as vertically
+    To give column-gap,row-gap in one property 
+    we can use shorthand property-> gap:row-gap column-gap;
+    we can define it individually like row-gap,column-gap */
+
+    /* flex-wrap: wrap; */
+    /*? Specifies whether the items wil wrap to next line or not.
+    Values- nowrap(defaut),wrap,wrap-reverse*/
+
+    /* align-content: center; */
+    /*? align-content(works with wrap) is a CSS Flexbox (and Grid) property. It aligns multiple rows (or columns) of flex items.
+    Values- flex-start,flex-end,center,space-around,space-between,space-evenly */
+
+    margin: 0 auto;
+
+}
+
+.items {
+    width: 200px;
+    height: 100px;
+
+    /* aspect-ratio: 1; */
+    /*? Aspect ratio is the proportional relationship between an element's width and height. 
+    Aspect Ratio = Width : Height
+    For example:
+    1:1 → Square (100 × 100)
+    16:9 → Widescreen videos (1920 × 1080)
+    4:3 → Older monitors/TVs
+    3:2 → Many DSLR camera photos */
+
+    border: 2px solid black;
+    background-color: brown;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+
+    /* flex: 1; */
+    /* flex: grow shrink basis; (shorthand property) */
+
+    flex-grow: 1;
+    /* Giving all the flex items same space if space is available the items will occupy */
+}
+
+.item-1 {
+    order: 5;
+    /* Giving the sequence to the items how they placed in what order.The highest order will placed at the end */
+    align-self: center;
+    /* Aligning the single item. values-> flex-start,flex-end,center */
+}
+
+.item-2 {
+    order: 6;
+    align-self: center;
+}
+
+.item-3 {
+    order: 3;
+    /* align-self: center; */
+}
+
+.item-4 {
+    order: 4;
+    flex-shrink:5;
+    /* the ability of flex item to shrink comparision to other items works when there is nowrap(defualt)
+    It decides how much an item should shrink when there isn't enough space.*/
+    /* If space is lacking, flex-shrink can make it smaller. */
+}
+
+.item-5 {
+    order: 1;
+    flex-grow: 8;
+    /*  It decides how much an item should grow comparision to other items works when there is nowrap.
+    If there is extra space in the container.It decides how much an item should grow if there is extra space in the container.
+    If all items have flex-grow: 1 and one item has flex-grow: 3,that item receives 3 times more of the extra space than each 
+    of the other items.*/
+}
+
+.item-6 {
+    order: 2;
+    /* flex-basis:80px; */
+}

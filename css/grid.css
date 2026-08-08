@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gainsboro;
+}
+#heading-1
+{
+    color:goldenrod;
+    text-align:center;
+    margin:60px 0;
+    font-size:40px;
+}
+
+/* GRID- 2 dimensional layout for controlling rows and columns at same time.
+Used for making layouts,menu bars,navigation menus. 
+
+! Grid Container (Parent) 
+
+1. display
+2. grid-template-columns: px, %, fr, repeat(), minmax(), auto
+3. grid-template-rows: px, %, fr, repeat(), minmax(), auto
+4. gap
+5. justify-items: start, end, center, stretch(default)
+6. align-items: start, end, center, stretch(default)
+7. grid-auto-rows
+8. grid-auto-columns
+
+! Grid Items (Children) 
+
+1. grid-column: start / end
+2. grid-row: start / end
+3. grid-area: row-start / column-start / row-end / column-end
+4. justify-self: start, end, center, stretch(default)
+5. align-self: start, end, center, stretch(default)
+
+
+? Explicit Grid- is a grid which is created by us.
+Ex: grid-template-rows,grid-template-columns
+
+? Implicit Grid- The implicit grid is created automatically by the browser when:
+there are more grid items than the explicit grid can hold, or
+an item is placed outside the defined grid. 
+
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px;
+}
+
+Explicit Grid
++-----+-----+
+|  1  |  2  |
++-----+-----+
+
+Implicit Grid (created automatically)
++-----+-----+
+|  3  |  4  |
++-----+-----+
+|  5  |     |
++-----+-----+
+The browser automatically created extra rows for items 3, 4, and 5.
+
+? To Control the Implicit Grid-
+grid-auto-rows → Height of automatically created rows.
+grid-auto-columns → Width of automatically created columns. */
+
+.grid-container{
+
+    width:80%;
+    /* div is block level container it takes by full width so container takes 100% width */
+    margin:20px auto;
+    padding:4rem;
+    background-color: bisque;
+    
+    /*! Grid Container Properties */
+    display: grid;
+
+    /*? grid-template-rows->  used to define Height of rows,we can give n number of rows */
+    grid-template-rows:250px 240px;
+    /* grid-template-rows:auto auto; -> In this row height depend on content height */
+
+    /*? grid-template-columns-> used to define Width of columns,we can give n number of columns */
+    /* grid-template-columns:240px 300px 1fr ; */
+
+    /*? fr(fractional unit) - Divide the width into fractional parts.Acquire remaining space we can give 2 fr that take double the space  
+    We can use shortcut while defining rows and columns
+    grid-template-rows:repeat(no of times repeat, height of row);
+    grid-template-columns:repeat(no of times repeat, width of column); */
+
+    /*? min-content- smallest possible width an element can shrink to,
+    each word stays in different line,longest word decide final width */
+    /* grid-template-columns:250px  1fr min-content; */
+    /* grid-template-columns:repeat(3,min-content); */
+
+    /*? max-content- largest possible width all text to one line */
+    /* grid-template-columns:min-content 1fr max-content;  */
+    /* grid-template-columns:repeat(3,max-content);  */
+
+    /*? minmax(minimum, maximum)- Sets a size range of row and column will stay b/w min & max.
+    Sets a minimum size and a maximum size for a grid track (row or column).After shrinking min width will be fixed */
+    /* grid-template-columns:repeat(3,minmax(120px,1fr)); */
+    grid-template-columns:minmax(200px,1fr) 200px minmax(200px,1fr) ;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+
+    /*! Autofit and Autofill */
+    /* auto-fill and auto-fit are used with CSS Grid to create responsive columns without writing media queries.
+    Both only applies on grid-template-columns.They are almost identical, but there's one important difference. 
+    It is a replacement of no of times  in repeat
+    Dont use if you want particular no of columns.because it will take colums in respect of fr of total width defined
+    grid-template-columns: repeat(auto-fill/autofit, minmax(200px, 1fr));
+
+    ? Autofill-> Create as many columns as can fit, even if some columns remain empty.
+    Example:     
+    Container width = 1000px
+    Each column minimum = 200px
+    Browser creates 5 columns
+    +----+----+----+----+----+
+    | 1  | 2  | 3  |    |    |
+    +----+----+----+----+----+
+    Suppose you have only 3 items.
+    auto-fill still keeps the other 2 empty columns.
+    Those empty columns still occupy space.
+
+    ? Auto-fit-> Create as many columns as can fit, but collapse any empty columns.Best for responsive layouts
+    Example:
+    Container = 1000px
+    Items = 3
+    +---------+---------+---------+
+    |    1    |    2    |    3    |
+    +---------+---------+---------+
+    The empty columns disappear.
+    The existing columns stretch and become wider.
+    */
+
+    gap: 25px;
+    /*? Space between grid-items horizontally as well as vertically
+    To give column-gap,row-gap in one property 
+    shorthand property-> gap:row-gap column-gap;
+    individual property-> row-gap,column-gap */
+
+    grid-auto-rows: 100px;
+    /* height of extra row that grid creates automatically */
+    
+    grid-auto-columns: 100px;
+    /* height of extra row that grid creates automatically */
+    
+    /*? Horizontally alignment of items */
+    /* justify-items: start; */
+    /* Values-> start,center,end,stretch(default) */
+
+    
+    /*? Vertically alignment of items */
+    /* align-items: center; */
+    /* Values-> start,center,end,stretch(default)  */
+
+    /*? Center items horizontally and vertically */
+    /* place-items:center */
+    
+}
+.items{
+    /* Dont give width and height as it decided by grid in container */
+    background-color:hotpink;
+    text-align:center;
+    font-size:40px;
+    color:whitesmoke;
+    /* For centering the text  it is assuming all grid items as grid */
+    /* display: grid;
+    place-items: center; */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.item-1{
+    background-color:rgb(23, 48, 71);
+
+    /*? Used for changing the position of grid items,we can overlap as well */
+    /* grid-row:2/3;    
+    grid-column:3/4;   */
+
+    /*?grid-area -> Shorthand to position a grid item using grid-lines.
+    Order: row-start/column-start/row-end/column-end */
+    /* grid-area:2/3/3/4;  */
+    /* We can give individual properties as well like 
+    grid-row-start:2; 
+    grid-row-end:3;
+    grid-column-start:3;
+    grid-column-end:4; */
+
+}
+.item-2{
+    background-color:saddlebrown;
+     
+}
+.item-3{
+    background-color:darkblue;
+    
+    /* Justify-self-> Horizontal alignment of single item. */
+    /* justify-self: start; */
+    /* Values:start,end,center */
+    
+    /* align-self-> Vertical alignment of single item. */
+    /* align-self:center;   */
+    /* Values:start,end,center */
+
+}
+.item-4{
+    background-color:salmon;
+}
+.item-5{
+    background-color:khaki;
+}
+.item-6{
+    background-color:aquamarine;
+    /* grid-row:1/2;    
+    grid-column:1/2;   */
+}

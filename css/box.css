@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    width:100%;
+    height: 100vh;
+    background-color:black;
+    display: grid;
+    place-items: center;    
+}
+.box-shadow{
+    width:400px;
+    height:400px;
+    background-color:yellow;
+    border-radius:50%;
+    /* box-shadow apply to circle when border-radius:50% */
+    /* box-shadow-creates a shadow around a rectangular box
+    Syntax->box-shadow: x-offset y-offset blur-radius spread/density color; 
+    offset-x-> horizontally, offset-y->vertically*/
+    box-shadow: 0 0 50px 40px red;
+    margin-bottom:50px;
+}
+img{
+    width:400px;
+    height:400px;
+    margin-top:72px;
+    
+    /*! Filter Properties  */
+    /*drop-shadow() is a CSS filter that adds a shadow based on the visible shape of an element, rather than its rectangular box. 
+     Syntax-> filter: drop-shadow(offset-x offset-y blur-radius color); */
+    filter:drop-shadow(0 0 70px rgb(0,255,0));
+    
+    /* MOSTLY BETWEEN 0-1 except brightness */
+    /* converting image to black and white lies b/w 0 to 1 or (1-100%)  */
+    /* filter:grayscale(60%); */
+
+    /* it will blur the image */
+    /* filter:blur(3px); */
+
+    /* filter:brightness(2); */
+    /* value greater than 1 or less than 1 / start from 100%(by default) */
+
+    /* filter:contrast(2); */
+    /* control difference of dark and light */
+
+    /* filter:opacity(0.5); */
+    /* make the img transparent */
+
+    /* We can give multiple filters simultaneously */
+    /* filter: blur(1px) contrast(1.2) grayscale(1); */
+    
+
+
+
+}
