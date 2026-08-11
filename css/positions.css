@@ -25,7 +25,7 @@ img{
 
 }
 /*! Position property controls how an element is placed on a webpage 
-1)position:relative- Used as referance for the child.
+1)position:relative- Used as reference for the child.
 Move the element from its original position, but keep its original space reserved.
 
 2)position:absolute- Element position got changed from normal document flow,

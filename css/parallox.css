@@ -3,6 +3,10 @@
     padding:0;
     box-sizing:border-box;
 }
+/* Which one should you learn/use?
+    For content images → <img> ✅
+    For background/design images → background-image ✅ */
+
 /* h2{
     text-transform:uppercase;
     color:#FF8F00;

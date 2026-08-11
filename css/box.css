@@ -15,11 +15,13 @@ body{
     height:400px;
     background-color:yellow;
     border-radius:50%;
-    /* box-shadow apply to circle when border-radius:50% */
-    /* box-shadow-creates a shadow around a rectangular box
+
+    
+    /*? box-shadow-creates a shadow around a rectangular box(box-shadow apply to circle when border-radius:50%)
     Syntax->box-shadow: x-offset y-offset blur-radius spread/density color; 
     offset-x-> horizontally, offset-y->vertically*/
     box-shadow: 0 0 50px 40px red;
+    
     margin-bottom:50px;
 }
 img{

@@ -1,0 +1,98 @@
+/*!Media Query */
+/* Media queries in CSS are used to apply different styles based on the characteristics of a device or viewport, 
+such as screen width, height, resolution. They are the foundation of responsive web design, allowing websites to 
+adapt to phones, tablets, laptops, and desktops. 
+
+@media (condition) { 
+    css styles
+}
+    Orientation Types-
+    1.Landscape:horizontal(width >= height)
+    2.Portrait:vertical(height >= width )
+*/
+
+/*? How many types are there?
+CSS media queries have several media types:
+1.screen ->	Computer, laptop, mobile, tablet screens
+2.print  ->	When printing the webpage
+3.speech ->	Screen readers / speech output
+4.all    ->All media types(defualt)
+*/
+
+/*? min-width- Applies from a minimum width (min to end). Works like at least
+Ex. @media (min-width: 600px) {
+    body {
+        background: red;
+    }
+    If the screen is 600px or MORE, make the background red.
+} */
+/*? max-width- Applies up to a maximum width .Works like at most
+Ex. @media (max-width: 600px) {
+    body {
+        background: blue;
+    }
+}
+    If the screen is 600px or LESS, make the background blue. 
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* div is block level container it will take full width even if you define width and height particularly
+TTo make it shown in Horizontal manner use flexbox(Use this) or display:inline-block  */
+
+.media-container{
+    display: flex;
+}
+h1{
+    margin:30px;
+}
+
+.box{
+    width:300px;
+    height:200px;
+    background-color: brown;
+    margin:20px 30px;
+}
+
+@media screen and (max-width:971px)
+{
+    .media-container{
+        flex-direction:column;
+    }
+    
+}
+@media screen and (orientation:landscape)
+{
+   body{
+    background-color: pink;
+   }
+    
+}
+@media screen and (orientation:portrait)
+{
+   body{
+    background-color:yellow;
+   }
+    
+}
+/*! Container Queries in CSS
+A container query is like a media query, but instead of checking the screen width, it checks the width of a parent/container. 
+(container-name is optional) */
+
+.container{
+    container-type: inline-size;
+    container-name: image;
+    padding:25px ;
+}
+h2{
+    margin:25px;
+}
+
+@container image (max-width:664px){
+    img{
+        filter:grayscale(80%);
+    }
+}

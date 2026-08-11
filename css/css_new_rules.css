@@ -1,0 +1,90 @@
+ /* !CSS Variables (Custom Properties) */
+ /* CSS variables allow you to store a value once and reuse it throughout your CSS. 
+? For Defining varibales -
+--variable-name:value;
+? To use a variable
+var(--variable-name) */
+
+ /* :root-> represent entire document */
+ :root {
+     --main-color: blue;
+     --text-color: white;
+     --box-height: 200px;
+     --font-size: 50px;
+     --temp-color: green;
+ }
+
+ h1 {
+     color: var(--text-color);
+     background-color: var(--main-color);
+     font-size: var(--font-size);
+ }
+
+ .box {
+     height: var(--box-height);
+     background-color: var(--temp-color);
+     font-size: var(--font-size);
+     text-align: center;
+ }
+
+ .input {
+     font-size: 30px;
+ }
+
+ /*? Css Nesting provide the ability to nest one style rule inside another */
+ .hero-section {
+     h2 {
+         color: red;
+     }
+
+     p {
+         color: chartreuse;
+     }
+
+     /*?WE can target h2 and p like this as well (Space mandatory) 
+    & h2{
+        color:red;
+    }
+    & p{
+        color:chartreuse;
+    } 
+    */
+     h2:hover {
+         color: yellow;
+     }
+
+     h2::before {
+         content: "Lets start ";
+     }
+ }
+
+ li {
+     list-style-type: upper-alpha;
+     display: inline-block;
+ }
+
+ /* Accent Color */
+ input:checked {
+     accent-color: red;
+ }
+
+
+ /*? New Pseudo classes */
+ /* :is - is a CSS pseudo-class used to group multiple selectors and apply the same CSS rule to any one of them. */
+ ul {
+     li {
+         :is(h3, a, p) {
+             font-size: 20px;
+         }
+     }
+ }
+
+ /* :has(with label)- is a CSS relational pseudo-class used to select an element based on whether it contains or is related to another specified element.  */
+ :has(input:checked) label {
+     color: grey;
+ }
+
+ /* :not - is a CSS pseudo-class used to select elements that do not match a specified selector.*/
+ ol :not(li:nth-child(2)) {
+     border: 3px solid green;
+ }

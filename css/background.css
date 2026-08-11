@@ -1,0 +1,39 @@
+/*! Background-property */
+/* The background property is a shorthand property used to set multiple background-related properties 
+in one declaration. 
+1.background-color->Sets background color
+2.background-image->Adds background image
+
+3.background-repeat->Controls image repetition
+Values-repeat,repeat-x,repeat-y,no-repeat
+
+4.background-position->Controls image position
+?Values-top left,center center,bottom right,percentages,length values
+5.background-size->	Controls image size
+?Values-auto,contain,cover, percentages or length values
+6.background-attachment->Controls whether background scrolls
+?Values:scroll,fixed,local
+7.background->Shorthand for background properties
+?background:color image repeat position / size attachment;
+Ex- background: url("image.jpg") no-repeat center / cover;
+
+The / is required when specifying the size after the position.
+Not every value is required. You can use only the values you need.*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-color: rgba(33, 107, 86, 1); */
+    width:100vw;
+    height:100vh;
+    background-image: url("/public/stranger.jpeg");
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: 100% 100%; 
+    /* background-attachment: fixed; */
+     
+    
+}

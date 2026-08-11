@@ -45,12 +45,22 @@ adapt to phones, tablets, laptops, and desktops.
     css styles
 }
 */
-/* min-width- Applies from a minimum width (min to end).
-Here Minimum width is mentioned because if it comes below the minimum width the style will not apply*/
-/* max-width- Applies up to a maximum width (applies upto max,after that it not applies)
-Here Maximum width is mentioned because if it comes below the maximum width the style will not apply */
+/*? min-width- Applies from a minimum width (min to end). Works like at least
+Ex. @media (min-width: 600px) {
+    body {
+        background: red;
+    }
+    If the screen is 600px or MORE, make the background red.
+} */
+/*? max-width- Applies up to a maximum width .Works like at most
+Ex. @media (max-width: 600px) {
+    body {
+        background: blue;
+    }
+}
+    If the screen is 600px or LESS, make the background blue.  */
 
-/* if (screenWidth >= 768) */
+/* if (screenWidth >= 768) We can use max-width as well*/
 @media(min-width:768px)
 {   
     .container{
