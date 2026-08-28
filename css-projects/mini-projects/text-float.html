@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-float</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bungee Spice", sans-serif;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color:black;
+            color:white;
+            font-size:24px;
+            
+        }
+        h1{
+            animation:textfloat 1s linear infinite reverse;
+        }
+        @keyframes textfloat {
+            0%{
+                rotate:15deg;
+            }
+            50%{
+                rotate:0deg;
+            }
+            100%{
+                rotate:-15deg;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Rajat Veer <br>
+        Technical</h1>
+</body>
+</html>

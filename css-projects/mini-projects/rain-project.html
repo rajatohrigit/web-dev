@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raining</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            background-image:url("https://www.harpersbazaararabia.com/wp-content/uploads/sites/7/cloud/2024/04/17/uncUpMnv-Harpers-1-1200x675.jpg");
+            background-size:100% 100%;
+            
+        }  
+   
+        .rain{
+            width:100vw;
+            height:100vh;
+            /* background-image:url("/public/rain.png");  */
+            background-image:url("/public/rain2.png");
+            animation:rainmoving .4s  linear infinite; 
+            filter:brightness(80);
+            /* brightness should be greater than 1 */
+        } 
+        @keyframes rainmoving {
+            0%{
+                background-position:0% 0%;
+            }
+            100%{
+                background-position:10% 100%;
+            }
+            
+        }  
+    </style>
+</head>
+<body>
+    <div class="rain"></div>
+</body>
+</html>

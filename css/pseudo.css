@@ -44,17 +44,15 @@ ol{
     border:3px solid red;
     margin:35px;
 
-
-    /*! Overflow Property */
+    overflow:auto;
+}
+/*! Overflow Property */
     /* overflow controls what happens when the content inside an element is larger than the element itself.
     1. overflow:visible- (Default)-The extra content is visible outside the box.
     2. overflow:hidden- The extra content is cut off (hidden).
     3. overflow:scroll- Always shows scrollbars, even if the content fits.
     4. overflow:auto- Shows scrollbars only when needed. */
     
-    overflow:auto;
-}
-
 /*! Pseudo Elements */
 /* Pseudo-elements are used to style or create a specific part of an element without adding extra HTML.
 1. ::before- Adds content before an element.
@@ -62,8 +60,13 @@ ol{
 3. ::first-letter- Styles only the first letter.
 4. ::first-line- Styles only the first line of text.
 5. ::selection- Styles the text when the user selects it.Only background-color,color property applied on it.
-6. ::placeholder- style the placeholder text inside input.*/
+6. ::placeholder- style the placeholder text inside input.
+7. ::scrollbar- Styles the scrollbar 
+    scrollbar-track-vertical line
+    scrollbar-thumb-moving sick
+*/
 
+/*content is complusory line for running psuedo elements before and after we can give empty as well*/
 h1::first-letter{
     font-size:40px;
     color:chartreuse;
@@ -76,7 +79,7 @@ h1::first-letter{
 }
 
 h1::after{
-    content:"/Classes"
+    content:"/Classes";
 }
 
 h1::before{
@@ -95,13 +98,24 @@ textarea::placeholder{
 /*! Psuedo classes 
 A pseudo-class is used to style an element based on particular state/condition without adding extra html.
 :link,:visited,:hover,:active(visited and link only restricted to <a> tag)
-1):checked -Selects a checked checkbox, selected radio button.
-2):first-child -Selects an element that is the first child of its parent.
-3):last-child -Selects an element that is the last child of its parent.
-4):nth-child(n) -Selects the nth child of its parent.
-5):first-of-type -Selects the first element of a specific type among its siblings
-6):last-of-type -Selects the last element of a specific type among its siblings.
-7):nth-of-type(n) -Selects the nth element of a specific type among its siblings.*/
+
+1) :checked -Selects a checked checkbox, selected radio button.
+2) :first-child -Selects an element that is the first child of its parent.
+3) :last-child -Selects an element that is the last child of its parent.
+4) :nth-child(n) -Selects the nth child of its parent.
+5) :first-of-type -Selects the first element of a specific type among its siblings
+6) :last-of-type -Selects the last element of a specific type among its siblings.
+7) :nth-of-type(n) -Selects the nth element of a specific type among its siblings.
+8) :focus-visible - Make the focus clearly visible with outline (with tab button)
+    Ex- :is(input,textarea):focus-visible{
+            outline: 1px solid red;
+        }
+9) :checked-Used to give accent color 
+    Ex-  input:checked {
+            accent-color: red;
+        }
+    
+*/
 
 h2:first-child{
     text-decoration: underline;

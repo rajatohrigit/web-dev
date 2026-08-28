@@ -11,11 +11,12 @@ body {
 #heading-1 {
     text-align: center;
 }
-
+ 
 /* Flexbox (Flexible Box Layout) is a CSS layout model designed to arrange items in a row or column, making it easy to create 
 responsive and flexible layouts. 
     Main-axis-> X axis
     Cross-axis-> Y axis 
+Now with the flex we can play with child items through their parent
 
 /*! Flex Container (Parent) 
 1. display

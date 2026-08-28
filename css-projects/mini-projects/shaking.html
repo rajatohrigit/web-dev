@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake me button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-size: 4rem; */
+            
+        }
+
+        html{
+            font-size:10px;
+        }
+
+        body{
+            height:100vh;
+            display: grid;
+            place-items: center;
+            background-color: black;  
+        }
+
+        /* Button has its own browser default font-size,so it doesn't inherit the body's font-size automatically. */
+        
+           button{
+            /* width: 20rem;
+            height:10rem; */
+            padding:40px 50px;
+            background-color: transparent;
+            color:white;
+            border:2px white solid;
+            font-size:35px;
+            font-weight: bold;
+        }
+
+        button:hover{
+            border:3px solid red;
+            color:red;
+            animation:shakeit 0.5s linear infinite;
+        }
+
+        @keyframes shakeit {
+            0%{
+                rotate:20deg;
+            }
+            40%{
+                rotate:-20deg;
+            }
+            100%{
+                rotate:20deg;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <button type="button">Shake Me</button>
+</body>
+</html>

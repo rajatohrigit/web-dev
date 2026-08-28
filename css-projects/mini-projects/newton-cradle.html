@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--? Newton's Cradle is the small desk toy with several metal balls hanging in a row.
+    When you pull one ball back and release it, it hits the next balls, and the ball at the opposite end swings out. -->
+    <meta charset="UTF-8">
+    <meta Newton-craddle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html{
+            font-size: 10px;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            /* align-items: flex-start; */
+            background-color: aquamarine;
+        }
+        .cradle{
+            width:40rem;
+            margin-top:10rem;
+            border-radius:1.5rem;
+            border-top:4rem solid grey;
+            display:flex;
+            justify-content: center;
+            gap:4rem; 
+        }
+       
+        .poles{
+            width:.5rem;
+            height:30rem;
+            background-color:grey;
+            position: relative;
+        }
+
+        .cradle .poles::before{
+            content:"";/*content is complusory line for running psuedo elements before and after*/
+            width:5rem;
+            height:5rem;
+            background-color:grey;
+            border-radius:50%;
+            position: absolute; /*Parent-child relationship also be there to define with position/display*/
+            top:29.5rem;
+            left:-1.8rem;
+            
+        }
+        .poles:first-child{
+            animation:left-swing 3s 1s  linear infinite;
+            transform-origin: top;
+        }
+
+        .poles:last-child{
+            animation:right-swing 3s 1s linear infinite;
+            transform-origin: top;
+        }
+
+        @keyframes left-swing{
+            0%{
+                rotate:0;
+            }
+            50%{
+                rotate:30deg;
+            }
+            100%{
+                rotate:0;
+            }
+        }
+        @keyframes right-swing{
+            0%{
+                rotate:0;
+            }
+            50%{
+                rotate:-30deg;
+            }
+            100%{
+                rotate:0;
+            }
+        }
+        h1{
+            margin-top: 3rem;
+        }
+        h1{
+            font-size:5rem;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- If we dont use :before we have to add another hml
+     document like in the poles div we have to nest the balls div -->
+    <h1>Craddle Project</h1>
+    <div class="cradle">
+        <div class="poles"></div>
+        <div class="poles"></div>
+        <div class="poles"></div>
+        <div class="poles"></div>
+        <div class="poles"></div>
+        <!-- div inside div just like box in the container,but we need another box in it we can do it with psuedo element :before,:after
+         instead of adding extra html element as here below the poles we need balls -->
+    </div>
+</body>
+</html>

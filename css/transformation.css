@@ -33,7 +33,7 @@ Ex- transform: translate(100px, 50px); Moves element diagonally (horizontally ve
 ?2)scale(value) :Changes the size(increase or decrease) of an element.Works as multiplier.Default is 1.
 Ex- transform:scale(x,y);  Changes width and height
     transform:scale(value); Changes width and height equally
-    transform:scaleX(x); Changes only width
+    transform:scaleX(x); Changes only width(-ve changed direction)
     transform:scaleY(y); Changes only height
     New css properties-> 
     scale:value; Changes width and height equally

@@ -113,7 +113,8 @@ body{
 
     /*!Gradients-combination of 2 or more colors,used to create color transition with direction 
     /*Syntax- background: linear-gradient(direction, color1, color2);  
-    background or background-image*/
+    background or background-image
+    Default-direction:Top->Bottom*/
 
     /* background:linear-gradient(to left,orange,cyan); */
     /* With directions- to left[right to left],to right,to top,to bottom */
@@ -153,6 +154,6 @@ body{
     /* background:repeating-radial-gradient(yellow 200px,cyan 400px); */
 
     /* Differently spaced color stoppage */
-    background:radial-gradient(circle at center ,yellow 0%,green 20%,pink 70%,orange 100%);
+       background:radial-gradient(circle at center ,yellow 0%,green 20%,pink 70%,orange 100%);
 }
 

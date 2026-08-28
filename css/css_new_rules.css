@@ -57,6 +57,15 @@ var(--variable-name) */
          content: "Lets start ";
      }
  }
+ 
+/*? But if we write like this we need & */
+/* h2{
+        color:red;
+
+        &:before{
+
+        }
+    } */
 
  li {
      list-style-type: upper-alpha;
@@ -70,7 +79,8 @@ var(--variable-name) */
 
 
  /*? New Pseudo classes */
- /* :is - is a CSS pseudo-class used to group multiple selectors and apply the same CSS rule to any one of them. */
+ /* :is - is a CSS pseudo-class used to group multiple selectors and apply the same CSS rule to any one of them.
+ Not supports before and after psuedo class in it */
  ul {
      li {
          :is(h3, a, p) {
