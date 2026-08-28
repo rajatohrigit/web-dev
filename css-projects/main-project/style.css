@@ -808,9 +808,9 @@ New Media Query Range syntax
     }
     
     /*?contact us section */
-    /* .section-contact-us .grid-2-columns{
+    .section-contact-us .grid-2-columns{
         grid-template-columns: 1fr;
-    } */
+    }
 
 
 }
@@ -973,10 +973,10 @@ New Media Query Range syntax
     }
 
     /*? Blog section */
-    /* .section-contact-us .grid-2-columns{
+    .section-contact-us .grid-2-columns{
         grid-template-columns: 1fr;
         gap: 4rem;
-    } */
+    }
 
 
     /*? countact-us */
