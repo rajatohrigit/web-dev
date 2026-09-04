@@ -60,7 +60,7 @@ Ex- var value = true;
 Ex- var myName; 
      console.log(type of myName); 
 
-*5. Null- null means you intentionally have no value. null is primitive, but typeof null returns "object".
+*5. Null- null means you intentionally have no value.null is primitive, but typeof null returns "object".
 Ex- var myAge=null; 
      console.log(type of myAge); => Shows object by a bug
 
@@ -126,7 +126,7 @@ console.log(true + false); // 1+0 Result-> 1
 console.log(false + true); // 0+1 Result-> 1
 console.log(false - true); // 0-1 Result-> -1
 
-?ii)Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need to install anything
+?ii)Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need   to install anything
 *1)Number() -Inbuilt function converts any value to number if it is not able return NaN (N-capital)
 Ex- var myNumber = "8"; 
 console.log(typeof Number(myNumber));
@@ -141,8 +141,10 @@ console.log(String(true));   // true(converts boolean to string)
 console.log(String(false));  // false
 
 ?parseInt & parseFloat functions(both always give number data type)
+
 *3)parseInt()-
 Inbuilt function that converts a string into an integer (whole number).Ignores everything after decimal part even if it exists. 
+
 Ex- var myNumber = "8"; 
 console.log(parseInt(myNumber)); //shows 8
 console.log(typeof parseInt(myNumber)); //number(datatype) 
@@ -152,7 +154,9 @@ console.log(parseInt(myNumber)); //shows 8
 console.log(typeof parseInt(myNumber)); //number 
 
 *4)parseFloat()-
-parseFloat() converts a string into a decimal number.just show the decimal part after number if exists
+parseFloat() converts a string into a decimal number.
+just show the decimal part after number if exists
+
 Ex- var myNumber = "8.23";
 console.log(parseFloat(myNumber)); //shows 8.23 
 console.log(typeof parseFloat(myNumber));// number
@@ -206,7 +210,7 @@ undefined-imagine a box that was'nt opened yet
 ?Q: What is the purpose of the NaN value in JavaScript❓
 It is a special value that JavaScript uses when a mathematical or numeric operation fails to produce a valid number.
 
-*is(NaN) function check whether the value is a number or not..It first tries to convert the value to a number.
+*is(NaN) function check whether the value is a number or not.It first tries to convert the value to a number.
 
 console.log(isNaN("5"));   //false(converts string into number first then check whether number or not)
 console.log(parseInt("xyz"));  //NaN
@@ -286,7 +290,9 @@ console.log(10 !== "10");  // true
 ?7. >= Greater than or equal to
 ?8. <= Less than or equal to
 
-*4) Logical Operators- used to combine or check multiple conditions.The result is generally true or false.
+*4) Logical Operators- 
+Used to combine or check multiple conditions.The result is generally true or false.
+
 ?1) && — Logical AND
 Both conditions must be true.
 console.log(10 > 5 && 20 > 10); // true
@@ -299,7 +305,7 @@ console.log(10 > 5 || 20 < 10); // true
 It reverses the boolean value.
 console.log(!true); // false
 
-*5)Conditional/Ternary Operator- The ternary operator is a short way to write an if...else statement.
+*5)Conditional/Ternary Operator The ternary operator is a short way to write an if...else statement.
 condition ? valueIfTrue : valueIfFalse;
 
 ?Write a program to check if the candidates isEligibleForDrive or not? Age must be equal to or greater then 18.
@@ -307,9 +313,7 @@ let age=16;
 let result=(age>=18)?"Eligible for drive":"Not Eligible";
 console.log("result");
 
-?Let say you have a variable score representing a student's exam score. If the score is greater than or equal to 60, 
-?the student passes; otherwise, they fail. Use the conditional (ternary) operator to determine the result and store it 
-?in a variable called result. Log the result to the console❓
+?Let say you have a variable score representing a student's exam score. If the score is greater than or equal to 60, the student passes; otherwise, they fail. Use the conditional (ternary) operator to determine the result and store it in a variable called result. Log the result to the console❓
 let score=71;
 let result=(score>=60)?"You are passed":" You are Failed";
 console.log(result);
@@ -339,8 +343,7 @@ Ex- if (10 ==="10"){
      console.log("not equal"); 
 }
 
-*Q: Write a program that determines if a person is eligible to drive based on their age being greater than or equal 
-*to 18 and having a valid driver's license❓ 
+*Q: Write a program that determines if a person is eligible to drive based on their age being greater than or equal to 18 and having a valid driver's license❓ 
 let havingLicense=false;
 let myAge=19;
 
@@ -351,10 +354,10 @@ if((myAge>=18) && (havingLicense)){
 }
 
 */
-
-let score=71;
+//*Q:Wap with ternary operator of school result
+/* let score=71;
 let result=(score>=60)?"You are passed":" You are Failed";
-console.log(result);
+console.log(result); */
 
 
 

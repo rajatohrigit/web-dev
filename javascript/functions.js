@@ -2,14 +2,17 @@
 /* Function is a block of reusable code that performs a specific task or set of tasks. 
 Functions are used to organize code into modular and manageable pieces, promote code reuse, 
 and make programs more readable. 
+
 ?Function declaration-
 let a,b;
 function fname(a,b){ // Parameters
     return a+b;     //A function can calculate something and return the result.
 }
+
 ?Function calling(invocation-
 console.log(fname(3,4)); // Arguments
 */
+
 //? Parameters-
 /* Parameters allow you to pass values into a function.
 The variable written inside the function definition. It receives a value. */
@@ -106,15 +109,17 @@ console.log(sum()); */
 };
 sum(34,20); */
 
-//? with single statement but no return can be used because it go as return
+//? In single statement 
 /* const sum=(a,b)=> console.log(`sum is ${a} and ${b} is ${a+b}`);
 sum(34,20); */
 
+//?does'nt need return keyword in single statement
+/* const sum=(a,b)=> `sum is ${a} and ${b} is ${a+b}`;
+console.log(sum(34,20);*/
+
 //! Questions-
 
-//* Q: Write a JavaScript function calculator that takes two numbers and an operator as parameters
-//* and returns the result of the operation. The function should support addition, subtraction, 
-//* multiplication, and division.
+//* Q: Write a JavaScript function calculator that takes two numbers and an operator as parameters and returns the result of the operation. The function should support addition, subtraction, multiplication, and division.
 
 /* let calculator=(a,b,operator)=>{
     switch(operator){

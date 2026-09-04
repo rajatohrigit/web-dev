@@ -17,12 +17,8 @@ if (marks >= 90) {
     console.log("Grade C");
 } */
 
-//? Requirement-
-//* If the person is 18 years or older, a citizen, and registered to vote, display a message saying they are eligible to vote.
-//* If the person is younger than 18, not a citizen, or not registered to vote, display a message saying they are not eligible to vote.
-//* If the person is 18 or older but not a citizen, display a message saying they are not eligible due to citizenship status.
-//* If the person is 18 or older, a citizen, but not registered to vote, display a message saying they are not eligible due to registration status.
-//* Extended voting eligibility checker with additional conditions
+
+//*Q: If the person is 18 years or older, a citizen, and registered to vote, display a message saying they are eligible to vote.If the person is younger than 18, not a citizen, or not registered to vote, display a message saying they are not eligible to vote.If the person is 18 or older but not a citizen, display a message saying they are not eligible due to citizenship status.If the person is 18 or older, a citizen, but not registered to vote, display a message saying they are not eligible due to registration status.Extended voting eligibility checker with additional conditions
 
 /* let age=20;
 let isCitizen=true;
@@ -63,14 +59,7 @@ switch (day) {
 
 // break is used to immediately stop a loop or switch statement.
 
-//*Q:Write a JavaScript switch statement that takes a variable areaOfShapes representing different
-//* shapes, and based on its value, calculates and logs the area of the corresponding shape.
-//* Consider three shapes: 'Rectangle,' 'Circle,' and 'Square.' For 'Rectangle,' use variables
-//* a and b as the sides; for 'Circle,' use a variable r as the radius; and for 'Square,' use
-//* variable a as the side length. If the provided shape is not recognized, log a message saying,
-//* 'Sorry the shape is not available.' Test your switch statement with areaOfShapes set to 'Square' 
-//* and sides a and b set to 5 and 10, respectively. Ensure that the correct area (25 in this case) 
-//* is logged to the console.
+//*Q:Write a JavaScript switch statement that takes a variable areaOfShapes representing different shapes, and based on its value, calculates and logs the area of the corresponding shape. Consider three shapes: 'Rectangle,' 'Circle,' and 'Square.' For 'Rectangle,' use variables a and b as the sides; for 'Circle,' use a variable r as the radius; and for 'Square' use variable a as the side length. If the provided shape is not recognized, log a message saying,'Sorry the shape is not available.' Test your switch statement with areaOfShapes set to 'Square' and sides a and b set to 5 and 10, respectively. Ensure that the correct area (25 in this case) is logged to the console.
 
 /* let areaOfShapes="circle";
 let a=5;
@@ -100,7 +89,7 @@ while(a<10){
     a++;
 } */
 
-//* Table of any number with template literal (backticks `)
+//* Table of any number with template literal (backticks`)
 /* let num=5;
 let i=1;
 while(i<=10){
@@ -109,8 +98,8 @@ while(i<=10){
 }*/
 
 
-//?2)do...while- Executes the block at least once, then checks the condition.It get always executed one time.
-//? When the number of iterations is not known beforehand, and you want to validate the condition after the first iteration.
+//?2)do...while- 
+// Executes the block at least once, then checks the condition.It get always executed one time.When the number of iterations is not known beforehand, and you want to validate the condition after the first iteration.
 
 //*Q:Validating User Input with a Do...While Loop(user need to write a valid number) 🧑‍💻
 //?Browser Window prompt not runs in cs code terminal use browser console
@@ -193,6 +182,28 @@ if((year%4===0)&& (year%100!==0) || year%400===0){
     console.log(pattern);//console.log() prints the value and then moves the cursor to the next line. 
 } */
 
+//? 4) for of loop- also known as iterable
+/* The for...of loop is used to iterate over the values of an iterable object, such as arrays, strings, or other iterable objects.*/
+
+/* let fruits = ["apple", "orange", "banana"];
+for (let item of fruits) {
+    console.log(item); //["apple", "orange", "banana"]
+} */
+
+//* for loop
+/* let fruits = ["apple", "orange", "banana"];
+for (let item = 0; item < fruits.length; item++) { 
+  console.log(fruits[item]);
+}  */
+
+//?5) for in loop
+/* The for...in loop is used to iterate over the properties(including indices) of an object.
+It gives the indexes */
+
+/* let names=["beer","mohan","vamika"];
+for (let items in names){
+  console.log(names[items]);  
+} */
 
 
 

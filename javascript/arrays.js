@@ -1,6 +1,6 @@
-//!Arrays
+//!Arrays(Mutable)- Each value is element
 //An array is a data structure represents used to store multiple values in a single variable.
-//Ex- let students = ["Raj", "Aman", "Rohit"]; //Each value is element
+//Ex- let students = ["Raj", "Aman", "Rohit"]; 
 
 //? .at()
 /* .at() is a method used to get an element from an array or string by its index.
@@ -84,8 +84,7 @@ numbers.forEach((curElem,index,arr)=>{
 });
 console.log(numbers); */
  
-//*forEach cannot directly combined with other array methods.No Method chaining done like  
-//*applying filters becuase it can't return anything.
+//*forEach cannot directly combined with other array methods.No Method chaining done like applying filters becuase it can't return anything.
 
 
 //?4: map function- Returns new array("change each item, give me a new array of the changed items")
@@ -127,22 +126,30 @@ console.log(multiply); */
 //*CRUD OPERATION IN ARRAY Methods(Insert, Add, Replace and Delete Elements)
 
 //? 1:push():Method/function that adds one or more elements to the end of an array.
+
+//*Example-
 /* let fruits = ["apple", "orange", "mango", "grapes", "banana"];
 console.log(fruits.push("guava")); // 6(Returns the new length)
 fruits.push("guava");
 console.log(fruits); */
 
 //? 2: pop(): Method that removes the last element from an array.
+
+//*Example-
 /* let fruits = ["apple", "orange", "mango", "grapes", "banana"];
 console.log(fruits.pop()); //banana
 console.log(fruits); */
 
 //? 3: unshift(): Method that adds one or more elements to the beginning of an array.
+
+//*Example-
 /* let fruits = ["apple", "orange", "mango", "grapes", "banana"];
 console.log(fruits.unshift("guava")); //6(Returns the new length)
 console.log(fruits); */
 
 //? 4: shift(): Method that removes the first element from an array.
+
+//*Example-
 /* let fruits = ["apple", "orange", "mango", "grapes", "banana"];
 console.log(fruits.shift()); //apple
 console.log(fruits); */
@@ -152,7 +159,8 @@ pop-> end element delete
 unshift-> starting element add
 shift-> starting element delete */
 
-//?5: splice():Array method used to add, remove, or replace elements at any position in an array(Returns empty array)
+//?5: splice(): Array method used to add, remove, or replace elements at any position in an array    It returns empty array.
+
 /* Syntax- array.splice(start, deleteCount, item1, item2, ...);
 start → index where you want to start
 deleteCount → number of elements to remove
@@ -174,17 +182,18 @@ console.log(fruits); // [ 'apple', 'grapes', 'orange', 'banana', 'mango' ] */
 /* fruits.splice(fruits.length, 0, "grapes"); //Adding element in last
 console.log(fruits);//'apple', 'orange', 'banana', 'grapes', 'mango' ] */
 
+
 //* SEARCHING IN ARRAY
 
 //?1: indexOf() Method: 
-/* It is an array method used to find the index (position) of an element in an array.
-Returns first occurence. If not founds return -1 
+/* It is a method used to find the index (position) of an element in an array.
+Returns first occurence. If not founds return -1. 
 Syntax- indexOf(searchElem);
         indexOf(searchElem, fromIndex); */ 
 
 //*Examples-
 /*const numbers = [1, 2, 3, 6, 4, 5, 6, 7, 8, 9];
-console.log(numbers.indexOf(6)); //3      finds 6 at 3rd index
+console.log(numbers.indexOf(6));    //3   finds 6 at 3rd index
 console.log(numbers.indexOf(6,5)); // 6   start finding 6 but from the index 5 then return index */
 
 //?2.lastIndexOf() →
@@ -196,13 +205,14 @@ console.log(numbers.lastIndexOf(6));   //6    finds 6 at 6th index
 console.log(numbers.lastIndexOf(6,5)); //3    Start searching from index 5 and go backward. */
 
 //?3:includes()->
-/* It is an array method used to check whether a particular value exists in the array.
-It Returns Boolean value. 
+/* It is a method used to check whether a particular value exists in the array.
+It Returns Boolean value in terms of true or false. 
 Syntax-includes(searchElement); */
 
 //*Example-
 /*const numbers = [1, 2, 3, 6, 4, 5, 6, 7, 8, 9];
-console.log(numbers.includes(2)); */
+console.log(numbers.includes(2)); //true
+console.log(numbers.includes(0)); //false */
 
 //!Questions
 
@@ -268,8 +278,7 @@ let updatedCart=numbers.filter((curElem)=>{
 });
 console.log(updatedCart); */
 
-//*Q: Given an array of products where each product has a name and a price, write a function that uses 
-//* the filter method to return an array containing only the products with a price less than or equal to 500.
+//*Q: Given an array of products where each product has a name and a price, write a function that uses the filter method to return an array containing only the products with a price less than or equal to 500.
 /* const products=[
 { name: "Laptop", price: 1200 },
 { name: "Phone", price: 800 },
@@ -338,8 +347,7 @@ const result= words.map((curElem) =>{
 });
 console.log(result);//[ 'APPLE', 'BANANA', 'CHERRY', 'DATE' ] */
 
-//*Q:Using the map method, WAF that takes an array of numbers and returns a new array where each number is
-//* squared, but only if it's an even number.
+//*Q:Using the map method, WAF that takes an array of numbers and returns a new array where each number is squared, but only if it's an even number.
 /* const numbers = [1, 2, 3, 4, 5];
 const result=numbers.map((curElem)=>{
   if(curElem % 2===0){
@@ -348,22 +356,20 @@ const result=numbers.map((curElem)=>{
 }).filter((curElem)=>curElem!==undefined);
 console.log(result); */
 
-//*Q: Using the map method, write a function that takes an array of names and returns a new array 
-//* where each name is prefixed with "Mr."
+//*Q: Using the map method, write a function that takes an array of names and returns a new array where each name is prefixed with "Mr."
 /* const names = ["ram", "vinod", "laxman"];
 const result=names.map((curElem)=>{
       return `MR.${curElem}`;
 });
 console.log(result); */
 
-//?Reduce(): is an array method used when you want to take many array elements and produce one final value.
-/* Syntax- array.reduce(function callback(accumulator, currentValue, index, array) {
-}, initialValue); 
+//?4.Reduce():array method that used when you want to take many array elements & produce 1 final value.
+/* Syntax- array.reduce(function callback(accumulator, currentValue, index, array){}, initialValue);
+
 acc = accumulator → stores the result so far 
 initial value-where accum starts */
 
-//*Q:Write a JavaScript function that calculates the total price of items in a shopping cart. 
-//* The function should take an array of item prices as input and return the total price.
+//*Q:Write a JavaScript function that calculates the total price of items in a shopping cart.The function should take an array of item prices as input and return the total price.
 /* const productPrice = [100, 200, 300, 400, 500];
 const totalprice=productPrice.reduce((accum,curElem)=>{
       return accum+curElem;
