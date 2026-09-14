@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: green;
+            height:100vh;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .rectDiv{
+            width:400px;
+            height:400px;
+            background-color: aqua;
+            margin-bottom:3rem;
+            border-radius:1rem;
+            transition: all 0.6s linear;
+        }
+        #mainBtn{
+            width:6rem;
+        }
+        .transition-click{
+            border-radius:50%;
+            background-color: yellow;
+        }
+        .transition-dblclick{
+            border-radius:50%;
+            background-color: pink;
+        }
+        .transition-mouseover{
+            border-radius:50%;
+            translate:10rem 0;
+        }
+        .transition-mouseout{
+            border-radius:50%;
+            translate:-10rem 0;
+        }
+        .transition-mousedown{
+            border-radius:50%;
+            background-color: orange;
+            translate:10rem 0;
+        }
+        .transition-mouseup{
+            border-radius:0%;
+            background-color: aqua;
+            translate:0rem 0;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="rectDiv"></div>
+        <button id="mainBtn">Click me</button>
+        <!-- ?Mouse-events
+        !Events-      MEANING-
+        click	    Mouse button is clicked
+        dblclick	Double-click
+        mousedown	Mouse button is pressed down
+        mouseup	    Mouse button is released
+        mouseenter	Mouse enters an element
+        mouseleave	Mouse leaves an element
+        mousemove	Mouse moves over an element
+        mouseover	Mouse moves onto an element -->
+    </section>
+
+    <script>
+        let rectDiv=document.querySelector(".rectDiv");
+        let mainBtn=document.getElementById("mainBtn");
+
+
+        const removeAllClasses= ()=>{
+            rectDiv.classList.remove('transition-click');
+            rectDiv.classList.remove('transition-dblclick');
+            rectDiv.classList.remove('transition-mouseover');
+            rectDiv.classList.remove('transition-mouseout');
+            rectDiv.classList.remove('transition-mousedown');
+            rectDiv.classList.remove('transition-mouseup');
+        }
+
+        // We can write like this-
+        /*  mainBtn.addEventListener("click",()=> {
+            rectDiv.style.backgroundColor = "#f5ee62";
+        });  */
+
+        // 1. CLICK
+        //function definition-we get event by default as parameter
+       const mouseEvents1=()=>{
+            console.log("click");
+            removeAllClasses();
+            rectDiv.classList.add("transition-click");
+        }
+
+        //Function Calling-
+        mainBtn.addEventListener("click",mouseEvents1);
+
+        // 2. DOUBLE CLICK
+        const mouseEvents2=()=>{
+            console.log("Doubleclick");
+            removeAllClasses();
+            rectDiv.classList.add("transition-dblclick");
+        };
+        mainBtn.addEventListener("dblclick",mouseEvents2); 
+
+        // 3. MOUSEOVER
+        const mouseEvents3=()=>{
+            console.log("mouseover");
+            removeAllClasses();
+            rectDiv.classList.add("transition-mouseover"); 
+        };
+        rectDiv.addEventListener("mouseover",mouseEvents3);
+
+        // 4. MOUSEOUT
+        const mouseEvents4=()=>{
+            console.log("mouseout");
+            removeAllClasses();
+            rectDiv.classList.add("transition-mouseout"); 
+        };
+        rectDiv.addEventListener("mouseout",mouseEvents4);
+
+        // 5. MOUSEUP
+        const mouseEvents5=()=>{
+            console.log("mousedown");
+            removeAllClasses();
+            rectDiv.classList.add("transition-mousedown");
+        };
+        rectDiv.addEventListener("mousedown",mouseEvents5);
+
+        // 6. MOUSEDOWN
+        const mouseEvents6=()=>{
+            console.log("mouseup");
+            removeAllClasses();
+            rectDiv.classList.add("transition-mouseup"); 
+        };
+        rectDiv.addEventListener("mouseup",mouseEvents6);
+        
+    </script>
+</body>
+</html>

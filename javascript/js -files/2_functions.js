@@ -9,7 +9,7 @@ function fname(a,b){ // Parameters
     return a+b;     //A function can calculate something and return the result.
 }
 
-?Function calling(invocation-
+?Function calling(invocation)
 console.log(fname(3,4)); // Arguments
 */
 
@@ -37,7 +37,7 @@ f'name(); */
 };
 console.log(sum(45,23)); */
 
-//*Immediately Invoked Function Expression.(IIFE)
+//*Immediately Invoked Function Expression (IIFE)
 /* It is a function that is created and executed immediately
 (function() {
     console.log("Hello");

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size:62.5%;
+            color:#fff;
+        }
+        body{
+            height:100vh;
+            background-color: purple;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            width: 40rem;
+            height: 20rem;
+            background-color: black;
+            display: grid;
+            place-items: center;
+        }
+        .clock{
+            font-size:5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="clock"></div>
+        </div>
+    </section>
+
+    <script>
+        let clock=document.querySelector(".clock");
+        setInterval(()=>{
+            const date=new Date().toLocaleTimeString();
+            clock.innerText=date;
+        },1000);
+    </script>
+</body>
+</html>

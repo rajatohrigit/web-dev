@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud operation with basic todo list</title>
+    <style>
+        body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Simple DOM Todo App</h1>
+        <input type="text" id="inputField">
+        <button class="btn">Click me</button>
+        <div class="todoList"></div>
+    </div>
+
+    <script>
+        let inputElem=document.getElementById("inputField");
+        let ClickBtn=document.querySelector(".btn");
+        let todoElem=document.querySelector(".todoList");
+
+        const addTodo=()=>{
+            let pElem=document.createElement("p");
+            pElem.innerText=inputElem.value;// Input elem is acessed by value
+            // console.log(pElem);
+            todoElem.append(pElem);
+            inputElem.value="";
+        };
+
+        ClickBtn.addEventListener("click",()=>{
+            addTodo();
+        })
+
+        //Event delegation-Event delegation is a technique where you attach one event listener to a parent element instead of adding separate listeners to many child elements.Giving power to parent to identify which child triggers.
+
+        const removeTodo=todoElem.addEventListener("click", (event) => { 
+            console.log(event.target);
+            let currentElem = event.target;
+            currentElem.remove();
+        });
+
+        todoElem.addEventListener("click", removeTodo);//by default we got event as argument
+    </script>
+</body>
+</html>

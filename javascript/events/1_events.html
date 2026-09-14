@@ -1,0 +1,45 @@
+<!--  Mouse Events -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- 3 ways of defining Events -->
+    <h1>Using Inline event</h1>
+    <button onclick="alert('Welcome')">Greeting</button> 
+    <button ondblclick="alert('be professsional')">Instruction</button>  
+    <button onmouseover="alert('So How are you?')">Message</button> 
+
+    <h2>Using Dom event Handler</h2>
+    <button id="Btn-1">Sorry </button>
+    <button id="Btn-2">Instruction</button>
+    
+    <h2>Using addEventListener</h2>
+    <button id="Btn-3">Sorry </button>
+    <button id="Btn-4">Thanks</button>
+    
+    
+    <script>
+    //     Dom event handler- using fatarrow function
+    document.getElementById("Btn-1").onclick=()=>{
+        alert('sorry for everything');
+    };
+    document.getElementById("Btn-2").onmouseover=()=>{
+        alert('be professsional');
+    };
+    
+    //using addEventListener-> element.addEventListener("event", callbackfunction);
+    document.getElementById("Btn-3").addEventListener('click',()=>
+    {
+        alert('sorry for everything');
+    });
+    document.getElementById("Btn-4").addEventListener('mouseover',()=>
+    {
+        alert('thanks for everything');
+    });
+    </script>
+</body>
+</html>

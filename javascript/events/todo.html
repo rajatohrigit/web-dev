@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size:62.5%;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color:#fff;
+        }
+        h1{
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        input{
+            padding:12px 8px;
+            min-width: 24rem;
+            font-size: 2rem;
+            border-radius: 2rem;
+            margin-right: 1.2rem;
+            border: none;
+        }
+        li,button{
+            font-size:1.7rem;
+            letter-spacing: 0.1rem;
+            font-family:sans-serif;
+            line-height: 1.6; 
+            font-weight: 500;
+        }
+        li{
+            list-style-type: circle;
+            transition:all 0.5s linear;
+            word-break: break-all;/* add this one line */
+            max-width: 20rem;/* and cap the width */
+            
+            &:hover{
+                cursor:pointer;
+                color:palevioletred
+            }
+        }
+        button{
+            background-color: yellow;
+            cursor: pointer;
+            border-radius:10rem;
+            padding:0.6rem 1.4rem; /*dont give width and height just give padding  */
+            transition:all 0.3s linear;
+        
+            &:hover{
+               box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+               background-color:transparent;
+               color:yellow;
+            }
+        }
+        .mainDiv{
+            width:27rem;
+            display: grid;
+            grid-template-columns: 1fr 0.3fr;
+            align-items: center;
+            margin-top:2rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- In the forms default behaviour is submit so use e.preventDefault() method -->
+    <form action="" autocomplete="off"><!--gives no suggestion -->
+        <div>
+            <h1>TODO LIST</h1>
+            <input type="text" name="inputField" id="inputField">
+            <button class="mainBtn">ADD TODO</button>
+        </div>
+        <section class="todoSection">
+        </section>
+    </form>
+
+    <script>
+        let inputField=document.getElementById("inputField");
+        let mainBtn=document.querySelector(".mainBtn");
+        let todoSection=document.querySelector(".todoSection");
+
+        // Retrieve old todo data and convert string data into original form
+        const getLocalTodo=()=>{
+            return JSON.parse(localStorage.getItem("Tasks"));
+        };
+
+        // Call the getLocalTodo function if nothing founds then assign empty array
+        let localTodoList=getLocalTodo() || []  ;
+        
+        // Dynamically adding data in screen
+        const dynamicTodo=(todo)=>{
+            let divElem=document.createElement("div");
+            divElem.classList.add("mainDiv");
+            divElem.innerHTML=`
+            <li>${todo}</li>
+            <button class="deleteBtn">Delete </button>`;
+            todoSection.append(divElem);
+        };
+
+        //add the data in the array in localStorage
+        const addLocalTodo=(e)=>{
+            //prevent byDefault form submission
+            e.preventDefault();
+            
+            // we will update to localTodo list after clean the inputField
+            let data=inputField.value.trim();
+            //if the input field data is not empty and having duplicate values update it
+            if(data!=="" && !localTodoList.includes(data)){
+                localTodoList.push(data);
+                console.log("Data Added",localTodoList);
+                localStorage.setItem("Tasks",JSON.stringify(localTodoList));
+
+                dynamicTodo(data); // calling the dynamicTodo function
+
+                //clearing the inputField
+                inputField.value="";
+            }
+        };
+        
+        // When add button clicks
+        mainBtn.addEventListener("click",addLocalTodo);
+
+        // Display todoList when the user referesh
+        const displayTodo=(localTodoList)=>{
+            console.log("Stored Data",localTodoList);
+
+            localTodoList.forEach((curElem)=>{
+                dynamicTodo(curElem);
+            });
+        };
+        displayTodo(localTodoList);
+
+
+        // Remove/delete todo putting the event listener to parent so all child buttons became target by event delegation
+        todoSection.addEventListener("click",(e)=>{
+            e.preventDefault();
+            
+            if(e.target.classList.contains('deleteBtn')){
+                let targetContent=e.target.previousElementSibling.innerText;
+
+                // filter creates a new array
+                localTodoList= localTodoList.filter((curElem)=>{
+                    return curElem!==targetContent;
+                });
+
+                // Update LocalStorage
+                localStorage.setItem("Tasks",JSON.stringify(localTodoList));
+
+                // Remove TODO from screen
+                e.target.parentElement.remove();
+
+                //display after deleted list
+                console.log("TODO Deleted",localTodoList);
+                
+            }   
+        });
+    </script>
+</body>
+</html>
+
+<!-- code for understanding 
+
+? ========================================
+? 1. GET HTML ELEMENTS
+? ========================================
+
+let inputField = document.getElementById("inputField");
+let mainBtn = document.querySelector(".mainBtn");
+let todoLists = document.querySelector(".todoLists");
+
+? ========================================
+? 2. GET TODOs FROM LOCAL STORAGE
+? ========================================
+
+const getLocalTodo = () => {
+    let data = localStorage.getItem("Tasks");
+    return JSON.parse(data) || [];
+};
+
+? ========================================
+? 3. CREATE TODO ARRAY
+? ========================================
+
+let localTodoList = getLocalTodo();
+
+? ========================================
+? 4. SAVE ARRAY TO LOCAL STORAGE
+? ========================================
+
+const saveTodo = () => {
+    localStorage.setItem("Tasks",JSON.stringify(localTodoList));
+};
+
+? ========================================
+? 5. DISPLAY TODO ON Webpage
+? ========================================
+
+const addTodoDynamically = (todo) => {
+    const divElem = document.createElement("div");
+    divElem.classList.add("div_todo");
+    divElem.innerHTML = `
+        <li>${todo}</li>
+        <button class="deleteBtn">Delete</button> `;
+    todoLists.append(divElem);
+};
+
+
+? ========================================
+? 6. DISPLAY OLD TODOs
+? ========================================
+
+localTodoList.forEach((todo) => {
+    addTodoDynamically(todo);
+});
+
+
+? Show array when user opens/refreshes the page
+console.log(localTodoList);
+
+
+? ========================================
+? 7. ADD NEW TODO
+? ========================================
+
+const addTodoList = (e) => {
+    e.preventDefault();
+    const todo = inputField.value.trim();
+
+    ? Check the input so there is no duplicates and empty 
+    if(todo !== "" && !localTodoList.includes(todo)){
+         
+        localTodoList.push(todo); // Add TODO to array
+        saveTodo();               // Save updated array
+        addTodoDynamically(todo); // Display TODO
+        inputField.value = "";    // Clear input
+         
+        *Show updated array in console
+        console.log("TODO added:", localTodoList);
+    }  
+};
+
+
+? ========================================
+? 8. ADD BUTTON CLICK
+? ========================================
+
+mainBtn.addEventListener("click", addTodoList);
+
+? ========================================
+? 9. DELETE TODO
+? ========================================
+
+todoLists.addEventListener("click", (e) => {
+
+    ? Check if Delete button has class deleteBtn
+    if(e.target.classList.contains("deleteBtn")){
+
+        *Get TODO text
+        const todo = e.target.previousElementSibling.innerText;
+
+        * Remove TODO from array
+        localTodoList = localTodoList.filter((curTodo) => {
+            return curTodo !== todo;
+        });
+ 
+        saveTodo(); // Save updated array
+    
+        e.target.parentElement.remove(); //Remove TODO from webpage
+
+        * Show updated array in console
+        console.log("TODO deleted:", localTodoList);
+    }
+});
+-->

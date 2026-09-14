@@ -101,7 +101,7 @@ li{
 .btn{
     display:inline-block;
     background-color: blue;
-    padding:2rem 1.5rem;
+    padding:2rem 1.5rem;/* dont give width and height just give padding  */
     color:white;
     margin-top:2rem;
     border-radius: .6rem;

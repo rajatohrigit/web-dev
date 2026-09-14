@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <style>
+        *{
+            background-color:greenyellow;
+            font-weight: 700;
+        }
+        h1{
+            color:white;
+        }
+        button{
+            background-color:bisque;
+            color:black;
+            border-radius: 5rem;;
+        }
+        button:hover{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dont use live server as it create extra script -->
+    <h1>Js window objects</h1>
+    <button onclick="window.open('https://chatgpt.com/','_blank')">Navigate</button>
+
+    <h1>History Object</h1>
+    <button onclick="history.back()">Back</button>
+    <button onclick="history.forward()">Forward</button>
+    <button onclick="history.go(-1)">Move backward or forward</button>
+
+    <h1>Location object</h1>
+    <button onclick="location.reload()">Reload</button>
+    <button onclick="location.assign('https://chatgpt.com/')">Assign</button>
+    <button onclick="location.replace('https://chatgpt.com/')">Replace</button>
+
+    <script>window.alert("Welcome to window global object")</script>
+</body>
+</html>

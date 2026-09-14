@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.56;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        html{
+            font-size:20px;
+            color:white;
+        }
+        body{
+            background-color: green;
+            height:100vh;
+        }
+        input{
+            font-size:20px;
+            margin-top:50px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter key" id="inputText" name="inputData">
+        <div>
+            <p id="inputValue">Key Pressed:</p>
+            <p id="inputName">Key Code:</p>
+            <p id="inputType">Char code:</p>
+            <p id="EventType">Event type:</p>
+        </div>
+    </div>
+
+    <script>
+        let inputText=document.getElementById("inputText");
+        //Assigning reference to ids
+        let inputValue=document.getElementById("inputValue");
+        let inputName=document.getElementById("inputName");
+        let inputType=document.getElementById("inputType");
+        let EventType=document.getElementById("EventType");
+
+        const EnteredKey=(event)=>{
+            console.log(event);
+            
+            //Printing on console
+            console.log(`Input Value: ${event.target.value}`);// console.log("KeyPressed:",event.key);
+            console.log(`Input Name: ${event.target.name}`);
+            console.log(`Input Type: ${event.inputType}`);
+            console.log(`Event Type: ${event.type}`);
+            
+            //updating the data when event happen
+            inputValue.textContent=`Input Value: ${event.target.value}`;
+            inputName.textContent=`Input Name: ${event.target.name}`;
+            inputType.textContent=`Input Type: ${event.inputType}`;
+            EventType.textContent=`Event Type: ${event.type}`;
+        };
+        inputText.addEventListener("input",EnteredKey);
+        
+    </script>
+</body>
+</html>

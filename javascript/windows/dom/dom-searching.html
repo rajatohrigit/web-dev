@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom searching</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+        }
+       div{
+        font-size:1.5rem;
+       }
+       p{
+        font-size: 1.2rem;
+       }
+    </style>
+</head>
+<body>
+    <!-- Dont use live server. Use copy path ,as you are dealing with DOM objects -->
+     <h1 id="heading">Welcome to Development-jouney</h1>
+     <p id="para">Web development takes 9 months</p>
+     <hr>
+    <div class="web-dev">
+        <ul class="front-end">
+            <li>Html-5</li>
+            <li>css-3</li>
+            <li>Js</li>
+            <li>react</li>
+        </ul>
+        <hr>
+        <ol  class="back-end">
+            <li>Nodejs</li>
+            <li>Express js</li>
+            <li>Mongo Db</li>
+            <li>next js</li>
+        </ol>
+    </div>
+    <hr>
+    
+    <script>
+
+        /* let h1=document.getElementById('heading');
+        console.log(h1.innerHTML);
+        console.log(h1.innerText);
+        console.log(h1.textContent); */
+
+
+        /* let ul=document.getElementsByClassName('front-end');
+        console.log(ul);//html collection
+         for(let items of ul){
+            console.log(items.innerHTML); // shows html
+            console.log(items.innerText); // shows text
+            console.log(items.textContent); // css not applies & include comment
+        }*/
+
+
+        /* let li=document.getElementsByTagName('li');
+        console.log(li); //html collection
+        for(let items of li){
+            console.log(items.innerText); // shows text
+        } */
+       
+
+        /* let para=document.querySelector("#para");
+        console.log(para.innerText="Love this course");//updating data dynamically
+        //for id use #, for class . and we can directly refer element */
+
+
+        /* let li=document.querySelectorAll("li");
+        console.log(li); //gives nodelist
+        for(let items of li){
+            console.log(items.innerText);
+        } */ 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation object</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+        }
+       div{
+        font-size:1.5rem;
+       }
+       p{
+        font-size: 1.2rem;
+       }
+    </style>
+</head>
+<body>
+    <!-- Dont use live server. Use copy path ,as you are dealing with DOM objects -->
+     <h1>Welcome to Development-jouney</h1>
+     <p>Web development takes 9 months</p>
+     <hr>
+    <div class="web-dev">
+        <ul class="front-end">
+            <li>Html-5</li>
+            <li>css-3</li>
+            <li>Js</li>
+            <li>react</li>
+        </ul>
+        <hr>
+        <ol  class="back-end">
+            <li>Nodejs</li>
+            <li>Express js</li>
+            <li>Mongo Db</li>
+            <li>next js</li>
+        </ol>
+    </div>
+    <hr>
+    
+    <script>
+        let element=document.body;
+
+        // console.log(element.childNodes); //NodeList(14) [text, comment....] 
+        // console.log(element.children); //HTMLCollection(6) [h1, p, hr, div.web-dev, hr, script]
+        
+        // console.log(element.firstChild); //#text
+        // console.log(element.firstElementChild); //h1
+
+        // console.log(element.lastChild); //script
+        // console.log(element.lastElementChild); //script
+        
+        // console.log(element.firstElementChild.nextSibling);//#text
+        // console.log(element.firstElementChild.nextElementSibling);//p 
+         
+        // console.log(element.firstElementChild.previousSibling);//#text
+        // console.log(element.firstElementChild.previousElementSibling);//null
+
+    </script>
+</body>
+</html>

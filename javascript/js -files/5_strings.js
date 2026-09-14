@@ -274,27 +274,27 @@ console.log(count); //5 */
 //?wrapping in function
 /* let vowels="aeiou";
 let vowelsCount=0;
-const countVowels=((str)=>{
+const countVowels=(str)=>{
     for(let items of vowels){
         if(vowels.includes(items)){
             vowelsCount++;
         }   
     }
     return vowelsCount;
-});
+};
 console.log(countVowels("aeiou")); //5 */
 
 //* Q: Write a function to check if all the vowels presents in a string or not?
 
 /* let vowels="aeiou";
-const countVowels=((str)=>{
+const countVowels=(str)=>{
     for(let items of vowels){
         if(!str.includes(items)){
             return false;
         }   
     }
     return true;
-});
+};
 console.log(countVowels("aeous"));     //false
 console.log(countVowels("aeoui sjs")); //true */
 
@@ -302,12 +302,41 @@ console.log(countVowels("aeoui sjs")); //true */
 //* Q: Write a JavaScript function to check if the given string is Pangram or not?
 //A pangram is a string/sentence that contains all 26 letters of the English alphabet at least once.
 
-//? Logic- convert all character into lower caseRemove anything that is not a letter from a to z replacing it with empty string and removes duplicate letters with new Set(letters) output is like  {a,b} and checking size.
+//todo Logic- convert all character into lower caseRemove anything that is not a letter from a to z replacing it with empty string and removes duplicate letters with new Set(letters) output is like  {a,b} and checking size.
 
-/*const pangramChecker = (str) => {
+//?1st method
+/* const pangramChecker = (str) => {
   const letters = str.toLowerCase().replace(/[^a-z]/g,"");
   return new Set(letters).size === 26;
 };
 
 console.log(pangramChecker("The quick @ brown fox jumps over the lazy dog")); //true
 console.log(pangramChecker("The quick @ frown fox jumps over the lazy dog")); //false */
+
+//?2nd method
+/* const pangramChecker = (str) => {
+let inputArr = str.toLowerCase().split("");
+let setArray = new Set();
+
+for (let items of inputArr) {
+    if (items.charCodeAt() >="a".charCodeAt() && items.charCodeAt() <="z".charCodeAt()){
+            setArray.add(items);
+    }
+}
+  return setArray.size === 26;
+};
+
+console.log(pangramChecker("The quick @ brown fox jumps over the lazy dog")); */
+
+//?3rd method
+/* const pangramChecker = (str) => {
+  let inputArr = str.toLowerCase().split("");
+
+  const values = inputArr.filter((curElem) =>
+      curElem.charCodeAt() >= "a".charCodeAt() &&
+      curElem.charCodeAt() <= "z".charCodeAt()
+  ); //single statement with no return keyword required
+
+  return new Set(values).size === 26;
+};
+console.log(pangramChecker("The quick @ brown fox jumps over the lazy dog")); */

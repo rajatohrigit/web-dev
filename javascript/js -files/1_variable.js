@@ -13,7 +13,8 @@ You can write JavaScript directly inside an HTML element using an event attribut
 You can put JavaScript inside a <script> tag in your HTML.Just end before closing the body tag.
 * Ex- <script> console.log("veerji Smash"); </script>
 
-? 3. External JavaScript - For a real website, normally you create a separate .js file.
+? 3. External JavaScript 
+For a real website, normally you create a separate .js file.
 * Ex- <script src="script.js"> </script>
 
 !Variables
@@ -60,7 +61,7 @@ Ex- var value = true;
 Ex- var myName; 
      console.log(type of myName); 
 
-*5. Null- null means you intentionally have no value.null is primitive, but typeof null returns "object".
+*5. Null- null means you intentionally put no value.null is primitive, but typeof null returns "object".
 Ex- var myAge=null; 
      console.log(type of myAge); => Shows object by a bug
 
@@ -84,7 +85,7 @@ console.log(typeof (myNumber+""));
 
 
 ?Non-Primitive / Reference Type
-*1)Object-An object stores data as key-value pairs.
+*1)Object- An object stores data as key-value pairs.
 Ex-let person = {
     name: "Raj",
     age: 25
@@ -93,12 +94,12 @@ console.log(person.name);
 console.log(person.age);
 console.log(typeof person);
 
-*2)Array-An array stores multiple values in an ordered collection.
+*2)Array- An array stores multiple values in an ordered collection.
 Ex-let fruits = ["Apple", "Mango", "Banana"];
 console.log(fruits[0]);
 console.log(typeof fruits);
 
-*3)Date-Date is also an object used for dates and times.
+*3)Date- Date is also an object used for dates and times.
 Ex-let today = new Date();
 console.log(today);
 console.log(typeof today);
@@ -108,33 +109,41 @@ Primitive- The variable directly contains the value.Changing b doesn't affect a.
 Object/Reference- Variables refer to an object.
 
 !Concatenation-
-Used to concatenate strings with + sign.only when one string is passes
+Used to concatenate strings with + sign. Minimum one string should be there
 Ex-console.log("veer"+"ji");//Result-> veerji
 console.log(" " + " "); //Result-> 2 spaces 
 
 !Type Coercion- 
-Automatic conversion of values from one data type to another .Types of Coercion are:
+Automatic conversion of values from one data type to another .
+todo- Types of Coercion are:
 
 ?i)Implicit coercion: It happens automatically
-Ex- console.log(10 + "20"); // Implicit coercion 10 converted to string. Result-1020
-console.log(9 - "5"); // Implicit coercion 5 converted to number with arithmetic operator both perform calculation. Result-> 4
-console.log(" " + 0);//Implicit conversion 0 converted to string Result-> 0
+*Examples-
+console.log(10+"20"); // Result->1020
+?Implicit coercion 10 converted to string.
+
+console.log(9-"5"); // Result-> 4
+?Implicit coercion 5 converted to number with arithmetic operator both perform calculation. 
+
+console.log(" " + 0); // Result-> 0
+?Implicit conversion 0 converted to string 
+
 
 Implicit coercion boolean convert to number while arithmetic operator calculates
-console.log(true + true); //  1+1 Result-> 2
-console.log(true + false); // 1+0 Result-> 1
-console.log(false + true); // 0+1 Result-> 1
-console.log(false - true); // 0-1 Result-> -1
+console.log(true + true);  // Result->  2(1+1)
+console.log(true + false); // Result->  1(1+0)
+console.log(false + true); // Result->  1(0+1)
+console.log(false - true); // Result-> -1(0-1)
 
-?ii)Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need   to install anything
-*1)Number() -Inbuilt function converts any value to number if it is not able return NaN (N-capital)
+?ii)Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need to install anything
+*1)Number()-> Inbuilt function converts any value to number if it is not able return NaN (N-capital)
 Ex- var myNumber = "8"; 
 console.log(typeof Number(myNumber));
-console.log(Number(true));   // 1(convert boolean to number)
-console.log(Number(null));   // 0
+console.log(Number(true));   // 1 (convert boolean to number)
+console.log(Number(null));  // 0
 console.log(Number(""));   // 0
 
-*2)String() -Inbuilt function that converts any value to string (S-capital)
+*2)String()-> Inbuilt function that converts any value to string (S-capital)
 Ex- var myNumber = 8; 
 console.log(typeof String(myNumber));
 console.log(String(true));   // true(converts boolean to string)
@@ -151,26 +160,26 @@ console.log(typeof parseInt(myNumber)); //number(datatype)
 
 var myNumber = "8.32";
 console.log(parseInt(myNumber)); //shows 8
-console.log(typeof parseInt(myNumber)); //number 
+console.log(typeof parseInt(myNumber)); // number 
 
 *4)parseFloat()-
 parseFloat() converts a string into a decimal number.
-just show the decimal part after number if exists
+If the decimal part exists after a number then it shows otherwise not
 
 Ex- var myNumber = "8.23";
 console.log(parseFloat(myNumber)); //shows 8.23 
-console.log(typeof parseFloat(myNumber));// number
+console.log(typeof parseFloat(myNumber)); // number
 
 var myNumber = "8";
 console.log(parseFloat(myNumber)); //shows 8
-console.log(typeof parseFloat(myNumber));// number
+console.log(typeof parseFloat(myNumber)); // number
 
 *Here are more examples
 console.log(parseInt("123")); //123
-console.log(parseInt("123", 10)); //123(default base 10)
+console.log(parseInt("123", 10)); //123 (default base 10)
 console.log(parseInt("   123 ")); //123
 console.log(parseInt("077")); //77
-+console.log(parseFloat("1.9")); //1(adding + sign before string)
++console.log(parseFloat("1.9")); //1.9 (adding + sign before string)
 console.log(parseInt("-123")); //-123
 
 *5)Boolean()-It explicitly converts a value into true or false.
