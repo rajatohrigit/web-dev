@@ -15,7 +15,7 @@
 //*2. new Date(date string)           
 // console.log(new Date("2026-12-03")); //year-month-date
 // console.log(new Date("January 5 2024")); // Month Day, Year 
-// If the dateString is in a recognizable format, the Date object will be created accordingly and in the string month is starting from 1
+//? If the dateString is in a recognizable format, the Date object will be created accordingly and in the string month is starting from 1.
 
 //*3. new Date(year,month)
 // console.log(new Date(2024, 1)); 
@@ -36,7 +36,7 @@
 // console.log(new Date(2024, 1, 19, 10, 44, 9, 274)); 
 
 //*9. new Date(milliseconds)
-// console.log(new Date(1700000000000)); 
+// console.log(new Date(1700000000000)); // return time according to milliseconds
 //? Return miliseconds(gives milliseconds from January 1, 1970)
 // console.log(new Date().getTime()); // Same as console.log(Date.now());
 
@@ -114,6 +114,24 @@ const addToDate=(date,extraDay)=>{
 //? | minutes → ms | minutes × 60 × 1000        |
 //? | hours → ms   | hours × 60 × 60 × 1000     |
 //? | days → ms    | days × 24 × 60 × 60 × 1000 |
+
+/* Helping note (open me)
+? Seconds → ms
+Go down 1 level → multiply ×1000.
+? Minutes → ms
+Go down 2 levels → multiply ×60×1000.
+? Hours → ms
+Go down 3 levels → multiply ×60×60×1000.
+? Days → ms
+Go down 4 levels → multiply ×24×60×60×1000.
+? ms → seconds
+Go up 1 level → divide ÷1000.
+? ms → minutes
+Go up 2 levels → divide ÷1000÷60.
+? ms → hours
+Go up 3 levels → divide ÷1000÷60÷60.
+? ms → days
+Go up 4 levels → divide ÷1000÷60÷60÷24. */
 
 //* Q:Write a function to calculate the difference in days between two given dates.
 const date_1=new Date("2024-09-12");

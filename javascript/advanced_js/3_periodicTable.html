@@ -1,0 +1,108 @@
+<!-- ! setAttribute(name, value)
+This method adds a new attribute to an HTML element, or updates an existing one if it already exists.
+
+*Syntax: element.setAttribute("attributeName", "attributeValue"); 
+
+! getAttribute(name)
+This method reads the value of an attribute from an HTML element. It always returns a string.
+
+* Syntax: const value = element.getAttribute("attributeName");
+
+? Note: The [data-] prefix is a standard HTML convention for creating "custom data attributes." It's a safe way to store extra information on an element without breaking HTML rules. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            height: 100vh;
+            background-color:black;
+            color:white;
+        }
+
+        h1{
+            text-align: center;
+            margin-top:5rem;
+        }
+        .mainBody{
+            gap: 2.8rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top:5rem;
+            font-size: 1.8rem;
+        }
+        .elementdiv{
+            /* width and height is necessary otherwise wrap try to wrap as many items in it in a row wrap according to text content */
+            width:12rem;
+            height:7rem;
+            padding:2.6rem;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            transition:all 0.5s linear;
+            
+            &:hover{
+                cursor:pointer;
+                background-color: brown;
+                scale:1.1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Delegation - Periodic Table</h1>
+    <section class="mainBody"></section>
+
+    <script>
+        let mainBody=document.querySelector('.mainBody');
+
+        const createPeriodicTable=(symbol,atomicNumber,name)=>{
+            let div=document.createElement('div');
+            div.classList.add('elementdiv')
+            div.innerText=symbol;
+
+            div.setAttribute("data-atomic-number",atomicNumber);
+            div.setAttribute("data-element-name",name);
+            return div;
+
+        };
+
+        const initializePeriodicTable=()=>{
+           
+            for(let i=1;i<=50;i++){
+                const div=createPeriodicTable(`Elem ${i}`,i,`Elem ${i}`);
+                mainBody.append(div);
+            }
+        };
+        
+
+        const handleElementClick=(event)=>{
+            const target=event.target;
+            
+            if(target.classList.contains("elementdiv")){
+                const atomicNumber=target.getAttribute('data-atomic-number');
+                const elementName= target.getAttribute('data-element-name');
+                alert(`Atomic Number: ${atomicNumber}\nElement Name: ${elementName}`);
+            }
+             
+        };
+
+        initializePeriodicTable();
+
+        mainBody.addEventListener('click',handleElementClick);
+    </script>
+</body>
+</html>

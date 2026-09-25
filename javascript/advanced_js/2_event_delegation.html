@@ -1,0 +1,88 @@
+ <!-- ! Event Delegation: 
+?Event delegation is a concept in JavaScript where instead of attaching event listeners to individual elements, you attach a single event listener to a common parent of those elements. This is particularly useful when you have a large number of similar elements and want to reduce the number of event listeners, improve performance, and simplify code.   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: antiquewhite;
+        }
+        #myList{
+            list-style-type: none;
+        }
+        p{
+             margin-bottom:3rem;
+        }
+        li{
+            border:2px solid black;
+            padding: 1rem;
+            transition:all 0.3s linear;
+            margin:1rem;
+            user-select: none;
+
+            &:hover{
+                cursor: pointer;
+                scale:1.1;
+            }
+        }
+        #displayText {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Which programming Language you like the most?</p>
+    <ul id="myList">
+      <li>🎉 JavaScript 🎉</li>
+      <li>🎈 React 🎈</li>
+      <li>🎊 Next 🎊</li>
+      <li>🎁 HTML/CSS 🎁</li>
+    </ul>
+    <p id="displayText"></p>
+
+    <script>
+        // closest() finds the nearest parent (or itself) that matches the selector you give.
+        const myList=document.querySelector("#myList");
+        const displayText=document.getElementById("displayText");
+
+        const handleClickEvent=(event)=>{
+            const target = event.target.closest("li");
+            // The event listener is attached to the <ul>. If we click outside an <li> but inside the <ul>, the <ul> listener still runs. So we use closest('li') to find the nearest <li> and make sure we only handle clicks related to an <li>
+
+            if (!target) return;
+            // It is used to stop the function when no <li> is found.
+
+            target.style.rotate="y 360deg";
+            setInterval(()=>{
+                target.style.rotate="y 0deg";  // Reset rotation after a delay
+            },500);
+
+            displayText.textContent=`I liked ${target.textContent} the most`;
+        };
+
+        myList.addEventListener("click",handleClickEvent);
+    </script>
+</body>
+</html>

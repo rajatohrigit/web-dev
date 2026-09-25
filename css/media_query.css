@@ -22,18 +22,25 @@ CSS media queries have several media types:
 /*? min-width- Applies from a minimum width (min to end). Works like at least
 Ex. @media (min-width: 600px) {
     body {
-        background: red;
-    }
-    If the screen is 600px or MORE, make the background red.
+        background: red; //  If the screen is 600px or MORE, make the background red.
+    } 
 } */
+ 
 /*? max-width- Applies up to a maximum width .Works like at most
 Ex. @media (max-width: 600px) {
     body {
-        background: blue;
+        background: blue; // If the screen is 600px or LESS, make the background blue.
     }
-}
-    If the screen is 600px or LESS, make the background blue. 
-*/
+} */
+     
+/* !General media qury for all media queries
+@media(width<=1400px) // we can write like this is new syntax
+@media(width<=1200px)
+@media(width<=992px)
+@media(width<=768px)
+@media(width<=576px)
+@media(width<=480px) */
+
 *{
     margin: 0;
     padding: 0;
@@ -41,7 +48,7 @@ Ex. @media (max-width: 600px) {
 }
 
 /* div is block level container it will take full width even if you define width and height particularly
-TTo make it shown in Horizontal manner use flexbox(Use this) or display:inline-block  */
+To make it shown in Horizontal manner use flexbox(Use this) or display:inline-block  */
 
 .media-container{
     display: flex;

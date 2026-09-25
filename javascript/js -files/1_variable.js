@@ -1,7 +1,7 @@
 /* JavaScript (JS) is a programming language used to make websites interactive and dynamic.
 SHIFT + Alt + A-> For Multiline Comment
 CTRL + Alt + N-> Terminal shortcut
-CTRL + L-> Terminal Clear
+CTRL + L-> Terminal Clear * /
 
 
 !Types of JS /How to add Js file into html
@@ -17,7 +17,7 @@ You can put JavaScript inside a <script> tag in your HTML.Just end before closin
 For a real website, normally you create a separate .js file.
 * Ex- <script src="script.js"> </script>
 
-!Variables
+! Variables
 -A variable is a named container used to store a value so you can use or change that value later.
 Rules- 
 -> cannot start with number
@@ -28,64 +28,80 @@ Rules-
 
 ?Types of variables
 
-? 1.let- Use let when the value can change:
-* Ex- let age = 25; 
+? 1.let- Use let when the value can change.
+Ex- let age = 25; 
      age = 26;
 
 ? 2.const - Use const when the variable should not be reassigned:
-* Ex- const name = "Raj";
+Ex- const name = "Raj";
 
 ? 3.var - used to create variable older way.var is function-scoped, while let and const are block-scoped.
-* Ex- var age = 25; 
+Ex- var age = 25; 
      age = 26;
 
 ! Data Types
 A data type tells JavaScript what kind of value a variable contains
 1) Primitive datatypes(7): String,Number,BigInt,Boolean,Undefined,Null,Symbol
-2) Non-primitive/Object datatypes: object,array,date
+2) Non-primitive/Object datatypes: object,array,date,function
 
-?Primitive datatypes
-*1. String- Text is written inside quotes.
+? Primitive datatypes: 
+1) They are immutable (no changes allowed). 
+2) Here Copy by Value is used, When you update a primitive variable. JavaScript does not overwrite 10 in its existing memory location. Instead, it creates a new memory location for 20 and points a to the new address. 
+3) Primitive values in memory are immutable. It copies by value not by reference even they hold the same value but does'nt point to same memory location.
+
+let a = 10;
+let b = a; 
+b = 20;
+console.log(a); // 10
+console.log(b); // 20
+
+todo Primitives take up tiny memory (e.g., 8 bytes for a number). Non-primitives (like an array with 100,000 items) take up significant RAM. Creating duplicate copies of huge objects would crash browser memory, so JS copies only the lightweight memory reference instead.
+
+*1. String - Text is written inside quotes.
 Ex- var myName = "veerji"; 
      console.log(type of myName);
 
-*2. Number- Integers and decimal numbers.
+*2. Number - Integers and decimal numbers.
 Ex- var myNumber = 8; 
      console.log(type of myNumber);
 
-*3. Boolean- Only two possible values.
+*3. Boolean - Only two possible values.
 Ex- var value = true; 
      console.log(type of value); 
 
-*4. Undefined- A variable exists but hasn't been assigned a value.
+*4. Undefined - A variable exists but hasn't been assigned a value.
 Ex- var myName; 
      console.log(type of myName); 
 
-*5. Null- null means you intentionally put no value.null is primitive, but typeof null returns "object".
+*5. Null - Null means you intentionally put no value. null is primitive, but typeof null returns "object".
 Ex- var myAge=null; 
      console.log(type of myAge); => Shows object by a bug
 
-*6. BigInt- Used for extremely large integers.End with n.
+*6. BigInt - Used for extremely large integers larger than the standard 8-byte limit by adding n at the end.
 Ex- var myToys=123456789012345678901234567890n; 
      console.log(type of myToys);
 
-*7. Symbol- Creates a unique value. S is capital
+*7. Symbol - S is capital.
+? Creates a unique value. Generates guaranteed unique values, even if two symbols are created with the exact same description
 Ex- var mySymbol=Symbol("decription"); 
      console.log(type of mySymbol);
 
 *String to number conversion-
-With adding + sign before string makes number
+? With adding + sign before string makes number
 Ex- var myNumber = "8"; 
 console.log(typeof +myNumber);
 
 *Number to String conversion-
-Adding "" after string with brackets makes string
+? Adding "" after string with brackets makes string
 Ex- var myNumber = 8; 
 console.log(typeof (myNumber+""));
 
 
-?Non-Primitive / Reference Type
-*1)Object- An object stores data as key-value pairs.
+? Non-Primitive DataTypes (Mutable: changes allowed)
+In Copy by Reference, when you assign an object/array to another variable, both variables refer to the same object.
+Changing in one object makes changes to other object as well.
+
+*1) Object- An object stores data as key-value pairs.
 Ex-let person = {
     name: "Raj",
     age: 25
@@ -94,32 +110,36 @@ console.log(person.name);
 console.log(person.age);
 console.log(typeof person);
 
-*2)Array- An array stores multiple values in an ordered collection.
+*2) Array- An array stores multiple values in an ordered collection which can be of mixed data type.
 Ex-let fruits = ["Apple", "Mango", "Banana"];
 console.log(fruits[0]);
 console.log(typeof fruits);
 
-*3)Date- Date is also an object used for dates and times.
+*3) Date- Date is also an object used for dates and times.
 Ex-let today = new Date();
 console.log(today);
 console.log(typeof today);
 
-?Primitive vs Reference
+*4) Function- (As a Data Type)
+In JavaScript, functions are first-class data types. You can store an entire function directly inside a variable let greeting = function() { ... }
+
+
+? Primitive vs Reference
 Primitive- The variable directly contains the value.Changing b doesn't affect a.
 Object/Reference- Variables refer to an object.
 
-!Concatenation-
+! Concatenation-
 Used to concatenate strings with + sign. Minimum one string should be there
 Ex-console.log("veer"+"ji");//Result-> veerji
 console.log(" " + " "); //Result-> 2 spaces 
 
-!Type Coercion- 
+! Type Coercion- 
 Automatic conversion of values from one data type to another .
 todo- Types of Coercion are:
 
-?i)Implicit coercion: It happens automatically
+?i) Implicit coercion: It happens automatically
 *Examples-
-console.log(10+"20"); // Result->1020
+console.log(10+"20"); // Result-> 1020
 ?Implicit coercion 10 converted to string.
 
 console.log(9-"5"); // Result-> 4
@@ -129,29 +149,29 @@ console.log(" " + 0); // Result-> 0
 ?Implicit conversion 0 converted to string 
 
 
-Implicit coercion boolean convert to number while arithmetic operator calculates
+* Implicit coercion boolean convert to number while arithmetic operator calculates
 console.log(true + true);  // Result->  2(1+1)
 console.log(true + false); // Result->  1(1+0)
 console.log(false + true); // Result->  1(0+1)
 console.log(false - true); // Result-> -1(0-1)
 
-?ii)Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need to install anything
-*1)Number()-> Inbuilt function converts any value to number if it is not able return NaN (N-capital)
+? ii) Explicit coercion: It is done manually by the programmer.Inbuilt fun() js provides dont need to install anything
+*1) Number()-> Inbuilt function converts any value to number if it is not able return NaN (N-capital)
 Ex- var myNumber = "8"; 
 console.log(typeof Number(myNumber));
 console.log(Number(true));   // 1 (convert boolean to number)
 console.log(Number(null));  // 0
 console.log(Number(""));   // 0
 
-*2)String()-> Inbuilt function that converts any value to string (S-capital)
+*2) String()-> Inbuilt function that converts any value to string (S-capital)
 Ex- var myNumber = 8; 
 console.log(typeof String(myNumber));
 console.log(String(true));   // true(converts boolean to string)
 console.log(String(false));  // false
 
-?parseInt & parseFloat functions(both always give number data type)
+? parseInt & parseFloat functions(both always give number data type)
 
-*3)parseInt()-
+*3) parseInt()-
 Inbuilt function that converts a string into an integer (whole number).Ignores everything after decimal part even if it exists. 
 
 Ex- var myNumber = "8"; 
@@ -162,7 +182,7 @@ var myNumber = "8.32";
 console.log(parseInt(myNumber)); //shows 8
 console.log(typeof parseInt(myNumber)); // number 
 
-*4)parseFloat()-
+*4) parseFloat()-
 parseFloat() converts a string into a decimal number.
 If the decimal part exists after a number then it shows otherwise not
 
@@ -174,7 +194,7 @@ var myNumber = "8";
 console.log(parseFloat(myNumber)); //shows 8
 console.log(typeof parseFloat(myNumber)); // number
 
-*Here are more examples
+* Here are more examples
 console.log(parseInt("123")); //123
 console.log(parseInt("123", 10)); //123 (default base 10)
 console.log(parseInt("   123 ")); //123
@@ -182,7 +202,7 @@ console.log(parseInt("077")); //77
 +console.log(parseFloat("1.9")); //1.9 (adding + sign before string)
 console.log(parseInt("-123")); //-123
 
-*5)Boolean()-It explicitly converts a value into true or false.
+*5) Boolean()- It explicitly converts a value into true or false.
 Truthy and Falsy concept follows
 Ex-console.log(Boolean(1));    // true
 console.log(Boolean(10));      // true
@@ -190,7 +210,7 @@ console.log(Boolean(-5));      // true
 console.log(Boolean(0));       // false
 console.log(Boolean("hello")); // true
 
-!Truthy and Falsy Values
+! Truthy and Falsy Values
 Values are either considered truthy or falsy When calculated in Boolean context
 🟢 Truthy values
 Everything that is not falsy is truthy.
@@ -216,17 +236,22 @@ undefined-If you have a closed lunchbox (undefined), it means you haven't checke
 null-imagine a empty box
 undefined-imagine a box that was'nt opened yet
 
+console.log(null==undefined); // true but in strict equal to it return false
+conosle.log(null>=0 && null<=0); //true
+
 ?Q: What is the purpose of the NaN value in JavaScript❓
 It is a special value that JavaScript uses when a mathematical or numeric operation fails to produce a valid number.
 
 *is(NaN) function check whether the value is a number or not.It first tries to convert the value to a number.
 
-console.log(isNaN("5"));   //false(converts string into number first then check whether number or not)
+console.log(isNaN("5"));   // false(converts string into number first then check whether number or not)
 console.log(parseInt("xyz"));  //NaN
 console.log(parseInt("@#$"));  //NaN
 console.log(parseInt("xyz"));  //NaN
 console.log(parseInt("&123")); //NaN
 console.log("veer" - "ji");    //NaN
+console.log(10 / 0);  // infinity  
+console.log(-10 / 0);  // -infinity
 
 ?Q: NaN === NaN, Why is it false ❓
 if (NaN == NaN) {
@@ -235,7 +260,7 @@ if (NaN == NaN) {
      console.log("not equal");// not equal comes
 }
 
-!Operators in JavaScript
+! Operators in JavaScript
 An operator is a symbol or keyword that tells JavaScript to perform an operation on values.
 
 Expression is combination of operand and operator
@@ -248,33 +273,33 @@ Expression is combination of operand and operator
 5. Ternary          ? :
 6. typeof
 
-*1)Arithmetic Operators: Used for mathematical calculations.
+*1) Arithmetic Operators: Used for mathematical calculations.
 console.log(10 + 5);  // 15 (addition operator)
 console.log(10 - 5);  // 5  (Subtraction operator)
 console.log(10 * 5);  // 50 (Multiplication operator)
-console.log(10 / 5);  // 2  (Division operator)
+console.log(10 / 5);  // 2  (Division operator)  
 console.log(10 % 3);  // 1  (Modulus operator)
 console.log(2 ** 3);  // 8  (Exponentiation operator)
 
-?Increment/decrement operator
+? Increment/decrement operator
 i) Post-increment- use the value first, then increase
 let a = 5;
 console.log(a++); // 5
 console.log(a);   // 6
 
-ii). Pre-increment -increase first, then use the value
+ii) Pre-increment -increase first, then use the value
 let a = 5;
 console.log(++a); // 6
 console.log(a);   // 6
 
 
-*2)Assignment Operators: Used to assign or update a value in a variable.
+*2) Assignment Operators: Used to assign or update a value in a variable.
 let x = 10;
 console.log(x += 5); // 15(x=10+5) [Addition assignment]
 console.log(x *= 2); // 30(x=15*2) output updated to 15 [Multiplication assignment]
 console.log(x -= 10); // 20(x=30-10) output updated to 20 [Subtraction assignment]
 
-*3)Comparison operators: Used to compare two values.
+*3) Comparison operators: Used to compare two values.
 ?1) == Equal to - Checks if values are equal, ignoring data type.
 console.log(10 == 10);    // true
 console.log(10 == "10");  // true
@@ -303,12 +328,25 @@ console.log(10 !== "10");  // true
 Used to combine or check multiple conditions.The result is generally true or false.
 
 ?1) && — Logical AND
-Both conditions must be true.
+=> Both conditions must be true.
+=> If the first value is truthy → return the second value.
+=> If the first value is falsy → return the first value.
+
 console.log(10 > 5 && 20 > 10); // true
+console.log(true && "veer"); // veer
+console.log(false && "veer"); // false
+console.log(true && 10 && 20); // 20 (looks for first falsy value & return it and if not found then return last value)
 
 ?2) || — Logical OR
-At least one condition must be true.
+=> At least one condition must be true.
+=> If the first value is truthy → return the first value.
+=> If the first value is falsy → return the second value.
+
 console.log(10 > 5 || 20 < 10); // true
+console.log(true || "veer"); // true
+console.log(false || "veer"); // veer
+false || 10 || 20   // 10 (looks for first truthy value & return it and if not found then return last value)
+false || 0 || 20    // 20
 
 ?3) ! — Logical NOT
 It reverses the boolean value.
@@ -333,15 +371,16 @@ console.log(result);
 
 -Evaluates from left to right
 *Q:console.log("5" - 3); //2
-*Q:console.log(2 < 12 < 5);// true(1<5)
-*Q:console.log("20" + 10 + 10);// 201010
+*Q:console.log(2 < 12 < 5); // true(1<5)
+*Q:console.log("20" + 10 + 10); // 201010
+
 
 *Q:console.log(0.1+0.2); //0.30000000000000004 
--Because JavaScript stores numbers using 64-bit floating-point (IEEE 754) format. Computers work in binary (0 and 1), not decimal.
+-Because JavaScript stores numbers using 64-bit floating-point (IEEE 754) format. Computers work in binary (0 & 1) not decimal.
 
 To fix this-> 
-Use toFixed(no of digits after decimal)
-Ex-console.log((0.1+0.2).toFixed(2)); //0.30
+Use toFixed(no of digits after decimal) // returns new string
+Ex-console.log((0.1+0.2).toFixed(2)); // 0.30
 
 *Q:What is the difference between == and === operators in JavaScript❓
 The equality == operator is a comparison operator that compares two values and returns true if they are equal.
@@ -363,7 +402,7 @@ if((myAge>=18) && (havingLicense)){
 }
 
 */
-//*Q:Wap with ternary operator of school result
+//* Q:Wap with ternary operator of school result
 /* let score=71;
 let result=(score>=60)?"You are passed":" You are Failed";
 console.log(result); */

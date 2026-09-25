@@ -39,15 +39,15 @@ Ex- transform:scale(x,y);  Changes width and height
     scale:value; Changes width and height equally
     scale:x y; Changes width and height
 
-?3)rotate() :Rotates an element.Negative angle indicates Anticlockwise.
-Ex- transform: rotate(45deg);
-    transform: rotateX(45deg);
-    transform: rotateY(45deg);
-    New css property-> 
+?3)rotate() :Rotates an element. Negative angle indicates Anticlockwise.
+Ex- transform: rotate(45deg); //rotates around the Z-axis by default (2D rotation)
+
+    *New css property-> 
     rotate:45deg;
-    For 3d transformation->
-    rotate:x angle;    
-    rotate:y angle;    
+    
+    *For 3d transformation-> 
+    rotate:x angle; //transform: rotateX(angle);
+    rotate:y angle; //transform: rotateY(angle);
     rotate:z angle;    
 
 

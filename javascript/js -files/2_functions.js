@@ -3,7 +3,7 @@
 Functions are used to organize code into modular and manageable pieces, promote code reuse, 
 and make programs more readable. 
 
-?Function declaration-
+?Function declaration/function statement-
 let a,b;
 function fname(a,b){ // Parameters
     return a+b;     //A function can calculate something and return the result.
@@ -23,11 +23,18 @@ The variable written inside the function definition. It receives a value. */
 //*Function Expressions-
 /* A function expression means creating a function and storing it inside a variable.
 It is a way to define function as part of epressions.
-It can be either named or anonymous. If its named,it becomes a named function expression 
-Ex-let result=function f'name(parameters){
-    code 
-}; 
-f'name(); */
+It can be either named or anonymous. If its named,it becomes a named function expression */
+
+// let result=function (name){
+//     console.log(`hi i am ${name}`) 
+// }; 
+// result(veer); 
+
+//* Named Function expression
+// let result=function xyz(name){ 
+//     console.log(`hi i am ${name}`) 
+// }; 
+// result(veer);
 
 //*Anonymous Function-
 /* An anonymous function is a function that does not have a name. */
@@ -35,7 +42,31 @@ f'name(); */
 /* let sum=function(a,b){
     return a-b;
 };
-console.log(sum(45,23)); */
+console.log(sum(45,23)); // if it returning something we have to console to get output*/
+
+//*Default Parameters- ECMAScript 6 (ES6)
+//works from left to right
+/* function sum(a = 20, b = 10) { //default values
+  return a + b;
+}
+console.log(sum()); */
+
+//*Fat Arrow function- ECMAScript 6 (ES6)
+//A fat arrow function (usually called an arrow function) is a shorter way to write a function.
+
+/* const sum=(a,b)=>{
+    let result=`sum is ${a} and ${b} is ${a+b}`;
+    console.log(result);
+};
+sum(34,20); */
+
+//? In single statement 
+/* const sum=(a,b)=> console.log(`sum is ${a} and ${b} is ${a+b}`);
+sum(34,20); */
+
+//? Does'nt need return keyword in single statement
+/* const sum=(a,b)=> `sum is ${a} and ${b} is ${a+b}`;
+console.log(sum(34,20);*/
 
 //*Immediately Invoked Function Expression (IIFE)
 /* It is a function that is created and executed immediately
@@ -93,29 +124,6 @@ education
 hub`;
 console.log(address); */
 
-//*Default Parameters- ECMAScript 6 (ES6)
-//works from left to right
-/* function sum(a = 20, b = 10) { //default values
-  return a + b;
-}
-console.log(sum()); */
-
-//*Fat Arrow function- ECMAScript 6 (ES6)
-//A fat arrow function (usually called an arrow function) is a shorter way to write a function.
-
-/* const sum=(a,b)=>{
-    let result=`sum is ${a} and ${b} is ${a+b}`;
-    console.log(result);
-};
-sum(34,20); */
-
-//? In single statement 
-/* const sum=(a,b)=> console.log(`sum is ${a} and ${b} is ${a+b}`);
-sum(34,20); */
-
-//?does'nt need return keyword in single statement
-/* const sum=(a,b)=> `sum is ${a} and ${b} is ${a+b}`;
-console.log(sum(34,20);*/
 
 //! Questions-
 

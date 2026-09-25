@@ -1,0 +1,106 @@
+<!-- !FETCH API 
+? fetch() is a built-in browser function used to make HTTP requests (GET, POST, PUT, DELETE) to servers.
+? fetch() does not return data immediately. It returns a Promise that resolves to a Response object. 
+? Even a 404 or 500 error will not go to .catch().Fetch only rejects on network failure (no internet, DNS error,wrong url). error is a object here.
+*When you make a request using the fetch() function, the response contains data in the form of a JSON string. The res.json() method is used to asynchronously parse this JSON string into a JavaScript object.
+
+fetch(url, options)
+  .then((response) => {
+     return response.json();
+   })
+  .then((data) =>{
+     console.log(data);
+  }) 
+  .catch((error) =>{
+     console.error(error);
+  }) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Joke With promises with fetch api</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-bottom:1rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .container{
+            min-width: 32rem;
+            padding: 2.4rem 6.4rem;
+            border-radius: 0.6rem;
+            font-size:2rem;
+            background-color: #fff;
+            text-align:center;
+        }
+        .fetchJokeBtn{
+            background-color: yellow;
+            padding:1rem;
+            margin-top:3rem;
+            font-size:2rem;
+            transition:all 0.4s linear;
+
+            &:hover{
+                color:red;
+                background-color: gray;
+                cursor: pointer;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Get a JOKE</h1>
+        <div class="api_body"></div>
+        <button class="fetchJokeBtn">Get another Joke</button>
+    </section>
+
+    <script>
+        const api_body=document.querySelector(".api_body");
+        const fetchJokeBtn=document.querySelector(".fetchJokeBtn");
+        const apiUrl="https://icanhazdadjoke.com/";
+  
+        const fetchData=()=>{
+            fetch(apiUrl,{
+                headers:{
+                    "Accept":"application/json",
+                }
+            })
+            .then((resp)=>{
+                console.log(resp);
+                return resp.json();
+            })
+            .then((data)=>{
+                console.log(data.joke);
+                api_body.innerText=data.joke;
+            })
+            .catch((error)=>{
+                api_body.innerText="Api is not working";
+                console.log("i am sorry");
+            });
+        };
+        fetchData(); //it will show the joke by default
+        fetchJokeBtn.addEventListener("click",fetchData);
+    </script>
+</body>
+</html>

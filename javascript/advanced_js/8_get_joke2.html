@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Joke With async-await with fetch api</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-bottom:1rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .container{
+            min-width: 32rem;
+            padding: 2.4rem 6.4rem;
+            border-radius: 0.6rem;
+            font-size:2rem;
+            background-color: #fff;
+            text-align:center;
+        }
+        .fetchJokeBtn{
+            background-color: yellow;
+            padding:1rem;
+            margin-top:3rem;
+            font-size:2rem;
+            transition:all 0.4s linear;
+
+            &:hover{
+                color:red;
+                background-color: gray;
+                cursor: pointer;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Get a JOKE</h1>
+        <div class="api_body"></div>
+        <button class="fetchJokeBtn">Get another Joke</button>
+    </section>
+
+    <script>
+        const api_body=document.querySelector(".api_body");
+        const fetchJokeBtn=document.querySelector(".fetchJokeBtn");
+        const apiUrl="https://icanhazdadjoke.com/";
+        
+        // async function fetchData() {
+        const fetchData= async()=>{
+            // async function always returns a Promise
+            try{
+                // fetch() sends https request → returns a Promise (pending)
+                // await pauses the function until server responds/promise settles
+                // resp = Response object (headers only, no body yet)
+                const resp=await fetch(apiUrl,{
+                    headers:{
+                        "Accept":"application/json"
+                    }
+                });
+
+                // await pauses again until parsing done
+                // .json() reads body stream + parses JSON → returns another Promise
+                const data= await resp.json(); // data = JS object like { joke: "..." } 
+                console.log(data.joke); // acessing the data object and extracting joke property from it
+                api_body.innerText=data.joke; // dynamically add the joke by getting data from api
+
+            }catch(error){
+                // With optional catch binding if we dont need error object we can simply leave it
+                api_body.innerText="Currently api is not working";
+                console.log(error); // print the error object
+            }
+
+        }
+        fetchData(); // it will show the joke by default when page reloads
+        fetchJokeBtn.addEventListener("click",fetchData);
+    </script>
+</body>
+</html>

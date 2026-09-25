@@ -1,5 +1,12 @@
 //!STRINGS(immutable)
-//String is a sequence of characters (text) enclosed in single or double quotes
+/* String is a sequence of characters (text) enclosed in single or double quotes
+? Common Array & String methods
+1) .at()	
+2) .indexOf()	
+3) .lastIndexOf()	
+4) .includes()	
+5) .slice()	
+6) .length	 */
 
 // todo We can store every item in variable so we can use that variable to print instead of direct consoling as strings are immutable (no changes allowed)
 
@@ -21,7 +28,7 @@ Code	Result	    Description
 single and double quote can be written easily with template literal
 \n for next line or we can use multistring with temp literal
 
-Ex- console.log(`my na\\me is 'rajat'`);*/
+Ex- console.lo/g(`my na\\me is 'rajat'`);*/
 
 //? Array.from() returns create an new array from an iterable or array-like value.
 //*Example-
@@ -58,8 +65,8 @@ console.log(text.lastIndexOf("veer",8));  //6   Start searching from index 8 and
 
 //? 4.search():
 /*It is similar to indexOf(), but search() can also work with Regular expressions(come without ""). 
-=>Searches for a pattern and returns its index. Returns -1 if no match is found.
-=>Can't take 2nd start means multiple search not possible with commas.*/ 
+=> Searches for a pattern and returns its index. Returns -1 if no match is found.
+=> Can't take 2nd start means multiple search not possible with commas.*/ 
 
 //*Example-
 /* let text = "Hello JavaScript, welcome to our world best JavaScript course";
@@ -79,7 +86,7 @@ console.log(text.search(/script/i)); //10 ignore case sensitivity */
 // console.log(text.match("JavaScript")); //Give detailed output like text,index,input,groups
 // console.log(text.match(/JavaScript/)); 
 
-//? global finds all JavaScript return in array
+//? global finds all JavaScript word return that in array
 // console.log(text.match(/JavaScript/g));  // [ 'JavaScript', 'JavaScript' ]
 // console.log(text.match(/javascript/gi)); // [ 'JavaScript', 'JavaScript' ] 
 
@@ -93,7 +100,7 @@ Returns an iterator of all matches, providing detailed information about each ma
 If no match is found- returns an empty iterator  */
 
 //*Example-
-// let text = "Hello JavaScript, welcome to our world best JavaScript course";
+let text = "Hello JavaScript, welcome to our world best JavaScript course";
 
 //todo JS will convert normal text into Reg expression with g flag like text.match(/JavaScript/g)
 
@@ -121,7 +128,7 @@ for ( let items of iterator){
 //? 6.includes():
 /* It is a method used to check whether a particular value exists in the string.
 It Returns Boolean value in terms of true or false. 
-Syntax-includes(searchElement); */
+Syntax- includes(searchElement); */
 
 //*Example-
 /* let text = "Hello JavaScript, welcome to our world best JavaScript course";
@@ -203,7 +210,7 @@ console.log(text.at(-3)); //a */
 
 
 //*REPLACING STRING CONTENT
-// JavaScript provides methods to replace part of a string with another value.
+// JavaScript provides methods to replace part of a string with another value. returns new string
 
 //? 1.replace()
 // replace() replaces a matching value with a new value.We can use Reg expn as well
@@ -219,9 +226,14 @@ console.log(text.replace(/alpha/gi,"Beta")); //Beta Male Beta */
 
 //*Example-
 /* let text = "Alpha Male Alpha";
-console.log(text.replaceAll("Alpha","Beta"));  //Beta Male Beta
-console.log(text.replaceAll(/alpha/gi,"Beta")); //Beta Male Beta */
+console.log(text.replaceAll("Alpha","Beta"));  // Beta Male Beta
+console.log(text.replaceAll(/alpha/gi,"Beta")); // Beta Male Beta */
 //if we remove g it will throw error because it is by default
+
+//* Replacing multiple spaces with a single space:
+// const text = "hi   hi   veer       ji.";
+// const normalizedText = text.replaceAll(/\s+/g, " ");
+// console.log(normalizedText);
 
 
 //*Other Useful Methods:

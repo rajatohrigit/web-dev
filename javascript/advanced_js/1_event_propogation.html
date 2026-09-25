@@ -1,0 +1,128 @@
+ <!-- ! Event Propagation 
+When you click an element, the event doesn't simply stay on that element. It travels through the DOM hierarchy. 
+
+* Three Phases of Event Propagation: 
+
+?1) Capturing Phase:- top to bottom
+The event travels from parent → child.
+The event travels: outer → middle → inner
+Ex- document.addEventListener("click", callMiddle, true);
+
+
+?2) Target Phase 🎯
+The event reaches the actual element that was clicked.
+Ex- event.target gives html we have to give innerText or textContent to display
+
+
+?3) Bubbling Phase:- bottom to top (by default is false)
+The event starts from the target element and bubbles up to the root of the DOM.
+Ex- document.addEventListener("click", callMiddle, false);
+
+
+? event.stopPropagation()
+Stop this event from propagating further.
+
+? event.currentTarget
+The element whose event handler is currently executing.
+
+*To enable event capturing(Third argument is a boolean value). By default is false sets to be in bubbling phase which works from bottom to top.
+document.addEventListener("click", callMiddle, true); // if we click on outer then all child triggers top to bottom
+
+? You click	   Capturing	               Bubbling
+* Outer	       Outer	                   Outer
+* Middle	   Outer → Middle	           Middle → Outer
+* Inner	       Outer → Middle → Inner	   Inner → Middle → Outer -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event propagation project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            height: 100vh;
+            display:grid;
+            place-items: center;
+        }
+        section{
+            display:grid;
+            place-items: center;
+        }
+        div{
+            cursor: pointer;
+            border:2px solid black;
+            padding:4rem 10rem;
+            background-color: gray;
+            font-size: 2rem;
+        }
+        .outer:hover{
+            background-color: #d6417a; 
+        }
+        .middle:hover{
+            background-color: #9f70fd;
+        }
+        .inner:hover{
+           background-color: #9bcf53; 
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="outer"> Outer
+            <div class="middle"> Middle
+                <div class="inner"> Inner</div>
+            </div>
+        </div>
+    </section>
+
+ <script>
+    
+    let outer=document.querySelector(".outer");
+    let inner=document.querySelector(".inner");
+    let middle=document.querySelector(".middle");
+
+    const outerClick=(event)=>{
+        console.table([
+            {
+                Description: "I am the outer one",
+                Target: event.target,
+                CurrentTarget: event.currentTarget,
+            },
+        ])
+    };
+    outer.addEventListener('click',outerClick,true);
+
+    const innerClick=(event)=>{
+        console.table([
+            {
+                Description: "I am the inner one",
+                Target: event.target,
+                CurrentTarget: event.currentTarget,
+            },
+        ])
+    };
+    inner.addEventListener('click',innerClick,true);
+
+    const middleClick=(event)=>{
+        console.table([
+            {
+                Description: "I am the middle one",
+                Target: event.target,
+                CurrentTarget: event.currentTarget,
+            },
+        ])
+    };
+    middle.addEventListener('click',middleClick,true); // Event capturing
+ </script>
+</body>
+</html>
